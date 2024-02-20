@@ -15,6 +15,7 @@ nav:
     - Code: beginCode.md
     - Testing Mods: TestingMods.md
     - SAIO: beginSAIO.md
+    - Asking for help: BeginHelp.md
   - Modding Setup:
     - Making a Project: MakingProject.md
     - Setting up your development environment: DevSetup.md
