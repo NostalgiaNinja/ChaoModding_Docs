@@ -1,0 +1,1543 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://example.com/CharacterChaoModding/">
+      
+      
+        <link rel="prev" href="../TreeModding/">
+      
+      
+        <link rel="next" href="../LensModding/">
+      
+      
+      <link rel="icon" href="../logo.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.10">
+    
+    
+      
+        <title>Custom Character Chao Mods - Chao World Modding Documentation v2.0</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e359304.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#character-chao-modding" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Chao World Modding Documentation v2.0" class="md-header__button md-logo" aria-label="Chao World Modding Documentation v2.0" data-md-component="logo">
+      
+  <img src="../logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Chao World Modding Documentation v2.0
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Custom Character Chao Mods
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Dark Mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark Mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 2c-1.82 0-3.53.5-5 1.35C8 5.08 10 8.3 10 12s-2 6.92-5 8.65C6.47 21.5 8.18 22 10 22a10 10 0 0 0 10-10A10 10 0 0 0 10 2Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Light Mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light Mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Chao World Modding Documentation v2.0" class="md-nav__button md-logo" aria-label="Chao World Modding Documentation v2.0" data-md-component="logo">
+      
+  <img src="../logo.png" alt="logo">
+
+    </a>
+    Chao World Modding Documentation v2.0
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Useful pages
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Useful pages
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CWEAPICodeTemplate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CWE API Code Template
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RefChaoFiles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reference - SA2MDL Chao Filenames
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ChaoDataStruct/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reference - Chao Data Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tips for beginners
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Tips for beginners
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../beginTexturing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Texturing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../beginUV/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UV Unwrapping
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../beginCode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TestingMods/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Mods
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../beginSAIO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SAIO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BeginHelp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Asking for help
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Modding Setup
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Modding Setup
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MakingProject/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Making a Project
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DevSetup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setting up your development environment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Creating Mods
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Creating Mods
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FTNaming/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fortune Teller Name Mods
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HatModding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hat Mods
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FruitModding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fruit Mods
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AccessoryModding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accessory Mods
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AnimalModding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Custom Animal Mods
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TreeModding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Custom Tree Mods
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Custom Character Chao Mods
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Custom Character Chao Mods
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pre-requisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pre-requisites:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-character-chao" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a "Character Chao"?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modelling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modelling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#before-we-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before we start:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preparation:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-adding-new-geometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      (Optional) Adding new Geometry
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#texturing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Texturing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-saio-to-create-the-texture-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using SAIO to create the texture file:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-if-all-models-are-assigned" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing if all models are assigned:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coding
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Coding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-the-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding the dependencies:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copying-the-boilerplate-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Copying the boilerplate code:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-custom-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding Custom Models:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-the-evolution-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating the Evolution Function:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-the-custom-chao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding the Custom Chao
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-the-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building the Project:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-the-mod" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating the mod:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LensModding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lens Mods
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../credits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Credits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pre-requisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pre-requisites:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-character-chao" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a "Character Chao"?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modelling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modelling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#before-we-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before we start:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preparation:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-adding-new-geometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      (Optional) Adding new Geometry
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#texturing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Texturing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-saio-to-create-the-texture-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using SAIO to create the texture file:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-if-all-models-are-assigned" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing if all models are assigned:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coding
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Coding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-the-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding the dependencies:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copying-the-boilerplate-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Copying the boilerplate code:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-custom-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding Custom Models:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-the-evolution-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating the Evolution Function:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-the-custom-chao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding the Custom Chao
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-the-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building the Project:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-the-mod" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating the mod:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="character-chao-modding">Character Chao Modding</h1>
+<h2 id="pre-requisites">Pre-requisites:</h2>
+<ul>
+<li>Have completed the <a href="../MakingProject/">Making a DLL Project</a> section</li>
+<li>The latest version of Blender<ul>
+<li>Blender SAIO plugin</li>
+</ul>
+</li>
+<li>Intermediate 3D Theory</li>
+<li>Basic C++ Programming skills</li>
+<li>SA Tools (Make sure you've created an SA Tools Project!)</li>
+<li>Chao World Extended (Versions &gt; 9.5)</li>
+<li>Patience</li>
+</ul>
+<h2 id="what-is-a-character-chao">What is a "Character Chao"?</h2>
+<p>Character Chao are special Chao that were used for events in Sonic Adventure 2: Battle for the Gamecube. The Amy, Tails and Knuckles Chao were distributed via a special disc that allowed for players to legitimately obtain them. With the advent of Chao Editors, it was possible to obtain these through the "Chao Type" option. Starting from Chao World Extended 9.5, and the CWE API, we are now able to create custom Character Chao.</p>
+<h2 id="modelling">Modelling</h2>
+<h3 id="before-we-start">Before we start:</h3>
+<ul>
+<li>Delete all default scene objects! These objects will crash your game if you do not delete them.</li>
+<li>Make sure SAIO is up to date! As of writing, SAIO 2.1.2 is the most recent. Keeping SAIO and Blender up-to-date will help anyone helping you eliminate issues.</li>
+<li>Make sure SAIO is enabled in the Addons menu! If not, go to Edit -&gt; Preferences and go to the Addons menu to install/enable "Import-Export: Sonic Adventure I/O"</li>
+<li>If SAIO errors out on any operation, and it complains about .NET runtime, install the <a href="https://dotnet.microsoft.com/en-us/download">Microsoft .NET Runtimes</a> as instructed by the <a href="https://x-hax.github.io/SonicAdventureBlenderIO/">SAIO Documentation</a>.</li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">Things to bear in mind!</p>
+<ul>
+<li>
+<p>Character Chao are <strong>40 nodes</strong> large, which means that there should be a combination of 40 objects, both empties and meshes. If you go any higher or lower, the game will output an error in the console!</p>
+</li>
+<li>
+<p>If you have any Vertex Color attributes, an error will appear in the console! remove any of them in the Data -&gt; Color Attributes menu by selecting them and pressing the - button on the right of the menu.</p>
+</li>
+</ul>
+</div>
+<h3 id="preparation">Preparation:</h3>
+<p>Start off by finding the closest reference to the Chao you want to create.  It can be any Chao model, as that will be your starting point for the Custom Character Chao. If you want smaller proportions, use a Child Chao. If you want bigger proportions, use an Adult Chao.</p>
+<p>Alter any of the existing geometry as you see fit in Edit Mode, minding for the current UVs.</p>
+<h3 id="optional-adding-new-geometry">(Optional) Adding new Geometry</h3>
+<p>Add any new geometry on the Chao by making the necessary meshes as they should appear, bearing in mind the style of the Chao.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not UV map the extra geometry until you've joined the parts together. When joining, your UVs will disappear, meaning you will need to remap your UVs after you have joined them.</p>
+</div>
+<p>Now that you have added geometry, select the items you want to join together, <em>then</em> select the item you want to join them with, and press <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-j">J</kbd></span>. This will join all the geometry into the destination object, and maintain the necessary flags in the object.</p>
+<p>To select the geometry that you have added in Edit Mode, deselect everything, hover your pointer over the geometry you want to edit, and press <span class="keys"><kbd class="key-l">L</kbd></span>. This will select the object so that you can UV Unwrap it. Mark seams as necessary before UV unwrapping.  If you're having trouble viewing the object, press <span class="keys"><kbd class="key-slash">/</kbd></span> to go into local mode and focus on the object you have selected.</p>
+<h3 id="texturing">Texturing</h3>
+<div class="admonition danger">
+<p class="admonition-title">Heads up!</p>
+<p>ALL your textures have to be assigned and within the amount specified in the <code>TextureCount</code> variable! Make sure you make the TextureCount variable <em>exactly</em> the amount of textures you need! Anything out of bounds will output an error in the console!</p>
+</div>
+<p>Texture your Custom Chao as you would any other model, taking into mind the amount of textures you use. If you want to create custom UVs for the Chao, this would be a prime opportunity to do so. Make sure the "Use Texture" checkbox is ticked for every texture you're adding, and make sure to apply a texture to all the texture slots of an associated model.</p>
+<div class="admonition note">
+<p class="admonition-title">Regarding the mouth:</p>
+<p>The mouth needs 2 material slots and 2 Texture IDs, much like the vanilla mouths.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">How Chao colors work:</p>
+<p>The texture that is used for the Character Chao skin is <em>multiplied</em> to the base color of the Chao. This means that the background of the texture should be "white" (Hue: 0, Saturation: 0, Value: 1).</p>
+</div>
+<h3 id="using-saio-to-create-the-texture-file">Using SAIO to create the texture file:</h3>
+<p>Set up your texturing environment by going to SAIO Scene -&gt; Textures and selecting the "World" texture list by clicking the globe icon on the left. Add every texture into the texture file by clicking the + button (1), assigning an image to the texture (2), Adding a name to the texture (3) and assigning a unique Global Index to your texture.</p>
+<p><img alt="SAIO - Assigning Textures to a texture list" src="../imgs/SAIO-AssigningTextures.png" /></p>
+<p>Note the number of textures you have added (in this case it was 7 - a trick is to look at the local Texture ID of the last item you've added, and add 1) - Note it down as this is your <code>TextureCount</code> when you set up the code to register the Chao.</p>
+<p>click the down arrow and click "Export as Texture Archive" and save it as a .PAK file.</p>
+<div class="admonition warning">
+<p class="admonition-title">Regarding texture files:</p>
+<p>Because we're injecting into an already existing texture pack (al_body.prs), a separate texture file <strong>must</strong> be created for this project!</p>
+</div>
+<h3 id="testing-if-all-models-are-assigned">Testing if all models are assigned:</h3>
+<p>Go to SAIO Tools -&gt; Material and click the "Update Material Textures" button. If any of the material textures are black, you will need to assign textures to those models. Check the Texture ID to make sure it is within the range of your <code>TextureCount</code> as well.</p>
+<p>Export your SA2MDL model if everything goes well. Save a .blend file just in case something goes wrong!</p>
+<h2 id="coding">Coding</h2>
+<p>If you have not created a Visual Studio project yet, follow the instructions on "<a href="../DevSetup/">Setting up your development environment</a>".</p>
+<h3 id="adding-the-dependencies">Adding the dependencies:</h3>
+<p>Go into your Sonic Adventure 2 folder, and find the "programming" directory. Copy all of the files into your Visual Studio Project folder.</p>
+<p><img alt="Adding Dependencies" src="../imgs/FileManagement_AddingDependencies.png" /></p>
+<p>For advanced users, the most up-to-date dependencies can be found in <a href="../tools/">Tools</a> inside the "SA2Modloader includes" github page.</p>
+<p>Clone or download <code>ModelInfo.h</code> and <code>ModelInfo.cpp</code> from <a href="https://github.com/X-Hax/sa2-mod-loader/tree/master/libmodutils">LibModUtils</a>.</p>
+<p>To download the file in Github, click on each file you want, and click the download button on the right hand side of the header of the code preview.</p>
+<p><img alt="Github - Download Raw File" src="../imgs/github-DownloadRawFile.png" /></p>
+<p>Place these two files into your Visual Studio Project folder, where the other dependencies have been placed.</p>
+<p>You will need to change the first include in <code>ModelInfo.cpp</code> in order to fix a problem -- change <code>#include "stdafx.h"</code> to <code>#include "pch.h"</code>.</p>
+<p>If you don't replace the include, this error will occur!</p>
+<p><img alt="Replacing an include" src="../imgs/replaceinclude.png" /></p>
+<p>Afterwards, Add the files into your project by right clicking "Header Files" in your project explorer and going to Add -&gt; Existing Item... to add <code>ModelInfo.h</code> and <code>ModelInfo.cpp</code></p>
+<p><img alt="Add Existing Items" src="../imgs/AddExistingFilesVS.png" /></p>
+<h3 id="copying-the-boilerplate-code">Copying the boilerplate code:</h3>
+<p>Add a new source file and call it <code>main.cpp</code></p>
+<p>Copy the <a href="../CWEAPICodeTemplate/">Chao World Extended API Code Template</a> and paste it into the fresh <code>main.cpp</code> file that you've added to the Visual Studio project.</p>
+<h3 id="adding-custom-models">Adding Custom Models:</h3>
+<p>Create a <code>ModelInfo</code> pointer variable for each of the models you are about to add inside the <code>extern "C"</code> function. For example:</p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">ModelInfo</span><span class="o">*</span><span class="w"> </span><span class="n">MDLExampleCharacterChao</span><span class="p">;</span>
+</span></code></pre></div>
+<p>This is empty at the moment, so let's define it. In the <code>Init</code> function. underneath the <code>pathStr</code> variable, add the following for each model:</p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">MDLExampleCharacterChao</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ModelInfo</span><span class="p">(</span><span class="n">pathStr</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;ExampleCharacterChao.sa2mdl&quot;</span><span class="p">);</span>
+</span></code></pre></div>
+<p>Replace <code>MDLExampleCharacterChao</code> with whatever your <code>ModelInfo</code> pointer variable was called, and change the filename to the appropriate model.</p>
+<h3 id="creating-the-evolution-function">Creating the Evolution Function:</h3>
+<p>Create a static <a href="https://en.cppreference.com/w/cpp/language/pointer#Pointers_to_functions">function pointer</a> to evolve the Chao. The function pointer allows us to pick a requirement from <code>ObjectMaster</code> for our Chao to evolve. Place the function in <code>extern "C"</code>:</p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">ExampleChaoEvolve</span><span class="p">(</span><span class="n">ObjectMaster</span><span class="o">*</span><span class="w"> </span><span class="n">tp</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="cm">/* Your requirement here */</span><span class="p">)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">        </span><span class="k">else</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="p">}</span>
+</span></code></pre></div>
+<p>Explore the <code>tp-&gt;Data1.Chao-&gt;ChaoDataBase_ptr-&gt;</code> structrure by pressing <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-space">Space</kbd></span> and scrolling down the Intellisense list to see what values you can use. If you want some examples of values you can use, go <a href="../ChaoDataStruct/">here!</a> Take into mind what the struct varaible you use has as a data type.</p>
+<div class="admonition info">
+<p class="admonition-title">Using names</p>
+<p>To use a name to evolve the Chao, you will need to use a <a href="https://en.cppreference.com/w/c/string/byte/strcmp">strcmp</a> call to compare the name to the string you need. You also have to take into mind the <a href="https://chao-island.com/guides/chao-hacking/hacking-pc/chao-name-encoding">Chao Name Encoding</a> when writing your name. For example, when the Cosmo Chao mod was made, "\x23\x4F\x53\x4D\x4F" was used as a condition to check for the name "Cosmo" - Take this into mind!</p>
+</div>
+<h3 id="adding-the-custom-chao">Adding the Custom Chao</h3>
+<p>Now we set up the Chao! In the <code>CWELoad</code> function, create a <code>CWE_API_CHAO_DATA</code> struct variable. For example:</p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="w">    </span><span class="n">CWE_API_CHAO_DATA</span><span class="w"> </span><span class="n">CharChao_pData</span><span class="w"> </span><span class="o">=</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">        </span><span class="n">MDLExampleChao</span><span class="o">-&gt;</span><span class="n">getmodel</span><span class="p">(),</span><span class="w"> </span><span class="c1">//pObject</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">        </span><span class="p">{</span><span class="mi">0</span><span class="p">},</span><span class="w">                        </span><span class="c1">//pSecondEvoList[5]</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="s">&quot;ExampleChao&quot;</span><span class="p">,</span><span class="w">              </span><span class="c1">//TextureName</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="mi">7</span><span class="p">,</span><span class="w">                          </span><span class="c1">//TextureCount</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">        </span><span class="mh">0xFFFFFFFF</span><span class="p">,</span><span class="w">                 </span><span class="c1">//IconColor - hex, 4 bytes, 0xAARRGGBB</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">        </span><span class="n">ICON_TYPE_HALO</span><span class="p">,</span><span class="w">             </span><span class="c1">//IconType</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">        </span><span class="nb">NULL</span><span class="p">,</span><span class="w">                       </span><span class="c1">//pIconData</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">        </span><span class="n">ExampleChaoEvolve</span><span class="p">,</span><span class="w">          </span><span class="c1">//pEvolveFunc</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">        </span><span class="mi">0</span><span class="p">,</span><span class="w">                          </span><span class="c1">//Flags</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">        </span><span class="s">&quot;Example Chao&quot;</span><span class="p">,</span><span class="w">             </span><span class="c1">//Name</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">        </span><span class="s">&quot;ExampleChao&quot;</span><span class="p">,</span><span class="w">              </span><span class="c1">//id</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="p">};</span>
+</span></code></pre></div>
+<p>Let's break this down, since it's such a big structure:</p>
+<p><code>CWE_API_CHAO_DATA</code> - This is a struct which defines the necessary data needed for your Chao, inside the CWE API. It contains the following, in the following order:</p>
+<ul>
+<li>
+<p>pObject - Your Chao Model</p>
+</li>
+<li>
+<p>pSecondEvoList[5] - This is a custom Chao Evolution list, which is unsupported at the moment. Just use <code>{0}</code> for now.</p>
+</li>
+<li>
+<p>TextureName - This is your texture file to inject. Texlists are unsupported because of texture injection!</p>
+</li>
+<li>
+<p>TextureCount - This is the count of textures in your texture file. You should have noted this down in the modelling section of this guide.</p>
+</li>
+<li>
+<p>IconColor - This is a hexadecimal AARRGGBB number that gives you color to your <code>IconType</code></p>
+</li>
+<li>
+<p>IconType - There are 4 types you can use (3 supported at the moment) - <code>ICON_TYPE_BALL</code>, <code>ICON_TYPE_HALO</code>, <code>ICON_TYPE_SPIKY</code> and <code>ICON_TYPE_CUSTOM</code> (unsupported for now, don't use.) for your emoticon ball for your Chao.</p>
+</li>
+<li>
+<p>pIconData - A placeholder for custom emotion balls. Unsupported for now.</p>
+</li>
+<li>
+<p>pEvolveFunc - This is the Evolution Function that you created in the previous section to obtain your Chao.</p>
+</li>
+<li>
+<p>Flags - Keep at 0 for now. This is for the Custom Chao second evolution, which is unsupported at the moment.</p>
+</li>
+<li>
+<p>Name - This tells you the type of the Chao at the Health Center, and reflects on Krzys2 Chao Editor.</p>
+</li>
+<li>
+<p>ID - a text ID. This has to be null terminated and is used to place the Chao into CWE.</p>
+</li>
+</ul>
+<p>At the end of all of this, add your Chao Type just below your Character Chao struct:</p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="w">    </span><span class="n">cwe_api</span><span class="o">-&gt;</span><span class="n">AddChaoType</span><span class="p">(</span><span class="o">&amp;</span><span class="n">CharChao_pData</span><span class="p">);</span>
+</span></code></pre></div>
+<h3 id="building-the-project">Building the Project:</h3>
+<p>Your solution configuration should be "Release" and your solution platform should be "x86" so that your mod is small, and does not have the additional code inside your mod. Your configurations should look like the following image below:</p>
+<p><img alt="configuration and platform" src="../imgs/ConfigPlatform.png" /></p>
+<p>Build the project by pressing <span class="keys"><kbd class="key-f6">F6</kbd></span> or going to Build -&gt; Build Solution. If you have a "Build Succeeded" in your tooltip at the bottom left of your Visual Studio window, proceed. If you have a "Build Failed" message, have a look at the <a href="../examples/">Sample mod</a> to see where you went wrong, and try again. </p>
+<p>If you still can't get your build to work, try using the example mod as a template.</p>
+<h2 id="creating-the-mod">Creating the mod:</h2>
+<p>If you haven't followed <a href="../MakingProject/">Making a Project</a>, set up your mod folder. Copy the DLL file from inside your release folder into your mod folder and edit your "mod.ini" file to contain your DLLFile. For example:</p>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="na">DLLFile</span><span class="o">=</span><span class="s">ExampleMod.dll</span>
+</span></code></pre></div>
+<p>Place your .SA2MDL models inside the mod folder.</p>
+<p>Add a folder in your mod directory called "gd_PC", and inside that folder, add another directory called "PRS". Inside the "PRS" folder, add your <code>.PAK</code> texture files.</p>
+<p>Save your "mod.ini" file and test your mod!</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+    
+  </body>
+</html>
