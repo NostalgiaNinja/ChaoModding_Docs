@@ -28,3 +28,8 @@ You are encouraged to download these tools in order to make your Chao World modd
 * [Blender Manual](https://docs.blender.org/manual/en/latest/)
 * [SAIO Documentation](https://x-hax.github.io/SonicAdventureBlenderIO/)
 * [SA2 Modding Guide](https://github.com/X-Hax/SA2BModdingGuide/)
+
+## Useful mod code
+
+* [Chao World Extended Source Code](https://github.com/Exant64/CWE)
+* [Soephond's Chao Mission Source Code](https://github.com/Soephond/Chao-Mission)

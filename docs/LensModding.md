@@ -20,7 +20,7 @@ Lenses are a Chao World Extended addition, allowing you to change the texture of
 ## Modelling
 
 !!! tip "Advice"
-    Chao World Extended has a stock lens available. If you want to skip modelling a lens case, click [here]() to download the stock lens!
+    Chao World Extended has a stock lens available. If you want to skip modelling a lens case, click [here](https://github.com/NostalgiaNinja/CWEAPI_ExampleLens/raw/main/lensNeut.sa2mdl) to download the stock lens!
 
 ### Before we start:
 

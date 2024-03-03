@@ -25,6 +25,7 @@ A special thank you to all the following people:
 * Eru (Lenses, Discord channel support)
 * debugmode404 (Testing)
 * BassboostedMoonChao (Media, testing)
+* Soephond (Example Code)
 
 ## Reference
 
