@@ -22,7 +22,7 @@
     
     
       
-        <title>Accessory Mods - Chao World Modding Documentation v2.0</title>
+        <title>Accessory Mods - Chao World Modding Documentation v2.1.0</title>
       
     
     
@@ -90,7 +90,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Chao World Modding Documentation v2.0" class="md-header__button md-logo" aria-label="Chao World Modding Documentation v2.0" data-md-component="logo">
+    <a href=".." title="Chao World Modding Documentation v2.1.0" class="md-header__button md-logo" aria-label="Chao World Modding Documentation v2.1.0" data-md-component="logo">
       
   <img src="../logo.png" alt="logo">
 
@@ -103,7 +103,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Chao World Modding Documentation v2.0
+            Chao World Modding Documentation v2.1.0
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -210,12 +210,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Chao World Modding Documentation v2.0" class="md-nav__button md-logo" aria-label="Chao World Modding Documentation v2.0" data-md-component="logo">
+    <a href=".." title="Chao World Modding Documentation v2.1.0" class="md-nav__button md-logo" aria-label="Chao World Modding Documentation v2.1.0" data-md-component="logo">
       
   <img src="../logo.png" alt="logo">
 
     </a>
-    Chao World Modding Documentation v2.0
+    Chao World Modding Documentation v2.1.0
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -371,6 +371,48 @@
   
   <span class="md-ellipsis">
     Reference - Chao Data Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CharChaoCustomAccessories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Character Chao using Custom Accessories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CheckCWE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Checking if CWE Exists
   </span>
   
 
@@ -916,6 +958,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#creating-accessory-ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating accessory IDs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#creating-a-custom-texture-file" class="md-nav__link">
     <span class="md-ellipsis">
       Creating a custom Texture file:
@@ -1265,6 +1316,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#creating-accessory-ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating accessory IDs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#creating-a-custom-texture-file" class="md-nav__link">
     <span class="md-ellipsis">
       Creating a custom Texture file:
@@ -1358,7 +1418,7 @@
 <h2 id="before-we-start">Before we start:</h2>
 <ul>
 <li>Delete all default scene objects! These objects will crash your game if you do not delete them.</li>
-<li>Make sure SAIO is up to date! As of writing, SAIO 2.1.2 is the most recent. Keeping SAIO and Blender up-to-date will help anyone helping you eliminate issues.</li>
+<li>Make sure SAIO is up to date! As of writing, SAIO 2.1.5 is the most recent. Keeping SAIO and Blender up-to-date will help anyone helping you eliminate issues.</li>
 <li>Make sure SAIO is enabled in the Addons menu! If not, go to Edit -&gt; Preferences and go to the Addons menu to install/enable "Import-Export: Sonic Adventure I/O"</li>
 <li>If SAIO errors out on any operation, and it complains about .NET runtime, install the <a href="https://dotnet.microsoft.com/en-us/download">Microsoft .NET Runtimes</a> as instructed by the <a href="https://x-hax.github.io/SonicAdventureBlenderIO/">SAIO Documentation</a>.</li>
 </ul>
@@ -1393,6 +1453,10 @@
 <p><img alt="Vertex Grouping" src="../imgs/blender-VertexGroups.png" /></p>
 <p>select your items to bind to the body, select the bone that corresponds to the name of the object (make sure that the bone selected has a rounded square surrounding it) and press <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-p">P</kbd></span> to parent the bone (Do not use bone relative). go into pose mode (<span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-tab">Tab</kbd></span>) to test if the bone controls the accessory as well as the body part.</p>
 <p>If your bone controls the accessory as you like it, there is no need for the next step. If not, do the following:</p>
+<div class="admonition tip">
+<p class="admonition-title">How to select bones</p>
+<p>Select the object of the bone you're looking for, then click on the bone icon in the outliner. If the bone has a rectangle border outline, it means you've done this correctly.</p>
+</div>
 <p>weight paint your model by selecting your model (go out of pose mode by pressing <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-tab">Tab</kbd></span> again), press A (to select all the faces), and go to the "Data" panel of your model you want to weight paint. A new section should appear where we defined the vertex groups. make sure the "Weight" slider is at 1.000 and click "Assign". This should make all the faces follow the bone we created. Tab out of Edit mode and follow the next step.</p>
 <p>delete all the "attach_" meshes that were created with the "Armature from Objects" process, and you're done! You now have a functional body accessory!</p>
 <p>Note: There is a <strong>vertex limit of 32768</strong> per model.</p>
@@ -1426,21 +1490,25 @@
 <h3 id="copying-the-boilerplate-code">Copying the boilerplate code:</h3>
 <p>Add a new source file and call it <code>main.cpp</code></p>
 <p>Copy the <a href="../CWEAPICodeTemplate/">Chao World Extended API Code Template</a> and paste it into the fresh <code>main.cpp</code> file that you've added to the Visual Studio project.</p>
+<h3 id="creating-accessory-ids">Creating accessory IDs</h3>
+<p>Inside the <code>extern "C"</code> function, create an ID that we will use for accessories:</p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ExampleAccessoryID</span><span class="p">;</span>
+</span></code></pre></div>
 <h3 id="creating-a-custom-texture-file">Creating a custom Texture file:</h3>
 <p>Inside the <code>extern "C"</code> function, the following two lines:</p>
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">NJS_TEXNAME</span><span class="w"> </span><span class="n">ExampleTex</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">NJS_TEXLIST</span><span class="w"> </span><span class="n">example_texlist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">arrayptrandlength</span><span class="p">(</span><span class="n">ExampleTex</span><span class="p">)</span><span class="w"> </span><span class="p">};</span>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">NJS_TEXNAME</span><span class="w"> </span><span class="n">ExampleTex</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">NJS_TEXLIST</span><span class="w"> </span><span class="n">example_texlist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">arrayptrandlength</span><span class="p">(</span><span class="n">ExampleTex</span><span class="p">)</span><span class="w"> </span><span class="p">};</span>
 </span></code></pre></div>
 <p>Let's break these two lines down:</p>
 <p><code>NJS_TEXNAME</code> - The name of your texture loader. change <code>ExampleTex</code> with a unique name, and replace the number inside of the square brackets (the array assignment) to the amount of textures your mod will have.</p>
 <p><code>NJS_TEXLIST</code> - The texture list - Assign this to your <code>NJS_TEXNAME</code> so that it knows how to read it. Give it a unique name, since you reference this in any API calls that need your texture.</p>
 <p>Inside the CWELoad function, Load the texture file with the following code:</p>
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">cwe_api</span><span class="o">-&gt;</span><span class="n">RegisterChaoTexlistLoad</span><span class="p">(</span><span class="s">&quot;ExampleTex&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">example_texlist</span><span class="p">);</span>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">cwe_api</span><span class="o">-&gt;</span><span class="n">RegisterChaoTexlistLoad</span><span class="p">(</span><span class="s">&quot;ExampleTex&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">example_texlist</span><span class="p">);</span>
 </span></code></pre></div>
 <p><code>RegisterChaoTexlistLoad()</code> takes two arguments - The name of your texture file (without the .PAK at the end of it) and a reference call to the <code>NJS_TEXLIST</code> that you created.</p>
 <h3 id="adding-black-market-attributes">Adding Black Market Attributes</h3>
 <p>Add the following code below the texture list variables:
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">BlackMarketItemAttributes</span><span class="w"> </span><span class="n">BMExampleAccessiry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">};</span>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">BlackMarketItemAttributes</span><span class="w"> </span><span class="n">BMExampleAccessiry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">};</span>
 </span></code></pre></div></p>
 <p>Let's break it down:</p>
 <p><code>BlackMarketItemAttributes</code> - This is a struct inside of the CWE API which contains the following, in the following order:</p>
@@ -1466,16 +1534,16 @@
 </ul>
 <h3 id="adding-custom-models">Adding Custom Models:</h3>
 <p>Create a <code>ModelInfo</code> pointer variable for each of the models you are about to add inside the <code>extern "C"</code> function. For example:</p>
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">ModelInfo</span><span class="o">*</span><span class="w"> </span><span class="n">MDLExampleAccessory</span><span class="p">;</span>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">ModelInfo</span><span class="o">*</span><span class="w"> </span><span class="n">MDLExampleAccessory</span><span class="p">;</span>
 </span></code></pre></div>
 <p>This is empty at the moment, so let's define it. In the <code>Init</code> function. underneath the <code>pathStr</code> variable, add the following for each model:</p>
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">MDLExampleAccessory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ModelInfo</span><span class="p">(</span><span class="n">pathStr</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;ExampleAccessory.sa2mdl&quot;</span><span class="p">);</span>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">MDLExampleAccessory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ModelInfo</span><span class="p">(</span><span class="n">pathStr</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;ExampleAccessory.sa2mdl&quot;</span><span class="p">);</span>
 </span></code></pre></div>
 <p>Replace <code>MDLExampleAccessory</code> with whatever your <code>ModelInfo</code> pointer variable was called, and change the filename to the appropriate model.</p>
 <h3 id="adding-the-accessory">Adding the accessory:</h3>
 <p>We will be using the two types of accessories to define what our <code>EAccessoryType</code> Are. An <code>EAccessoryType</code> allows us to provide a category so that people can use the accessory in that category (They can use one head, one body, one generic1, and one generic2 accessory.)</p>
 <p>Inside the CWELoad function, call the <code>RegisterChaoAccessory</code> function from the CWE API. For example:</p>
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="w">    </span><span class="n">ExampleAccessoryID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cwe_api</span><span class="o">-&gt;</span><span class="n">RegisterChaoAccessory</span><span class="p">(</span><span class="n">Generic1</span><span class="p">,</span><span class="w"> </span><span class="n">MDLExampleAccessory</span><span class="o">-&gt;</span><span class="n">getmodel</span><span class="p">(),</span><span class="w"> </span><span class="o">&amp;</span><span class="n">example_texlist</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">BMExampleAccessory</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Example Accessory&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Example Description&quot;</span><span class="p">);</span>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="w">    </span><span class="n">ExampleAccessoryID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cwe_api</span><span class="o">-&gt;</span><span class="n">RegisterChaoAccessory</span><span class="p">(</span><span class="n">Generic1</span><span class="p">,</span><span class="w"> </span><span class="n">MDLExampleAccessory</span><span class="o">-&gt;</span><span class="n">getmodel</span><span class="p">(),</span><span class="w"> </span><span class="o">&amp;</span><span class="n">example_texlist</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">BMExampleAccessory</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Example Accessory&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Example Description&quot;</span><span class="p">);</span>
 </span></code></pre></div>
 <p>Let's break it down:</p>
 <p><code>cwe_api-&gt;RegisterChaoAccessory()</code> - this is the function call you need to make.</p>
@@ -1493,7 +1561,7 @@
 <p>If you still can't get your build to work, try using the example mod as a template.</p>
 <h2 id="creating-the-mod">Creating the mod:</h2>
 <p>If you haven't followed <a href="../MakingProject/">Making a Project</a>, set up your mod folder. Copy the DLL file from inside your release folder into your mod folder and edit your "mod.ini" file to contain your DLLFile. For example:</p>
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="na">DLLFile</span><span class="o">=</span><span class="s">ExampleMod.dll</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="na">DLLFile</span><span class="o">=</span><span class="s">ExampleMod.dll</span>
 </span></code></pre></div>
 <p>Place your .SA2MDL models inside the mod folder.</p>
 <p>Add a folder in your mod directory called "gd_PC", and inside that folder, add another directory called "PRS". Inside the "PRS" folder, add your <code>.PAK</code> texture files.</p>
