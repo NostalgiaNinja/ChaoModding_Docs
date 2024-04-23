@@ -22,7 +22,7 @@
     
     
       
-        <title>Troubleshooting - Chao World Modding Documentation v2.0</title>
+        <title>Troubleshooting - Chao World Modding Documentation v2.1.0</title>
       
     
     
@@ -90,7 +90,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Chao World Modding Documentation v2.0" class="md-header__button md-logo" aria-label="Chao World Modding Documentation v2.0" data-md-component="logo">
+    <a href=".." title="Chao World Modding Documentation v2.1.0" class="md-header__button md-logo" aria-label="Chao World Modding Documentation v2.1.0" data-md-component="logo">
       
   <img src="../logo.png" alt="logo">
 
@@ -103,7 +103,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Chao World Modding Documentation v2.0
+            Chao World Modding Documentation v2.1.0
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -210,12 +210,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Chao World Modding Documentation v2.0" class="md-nav__button md-logo" aria-label="Chao World Modding Documentation v2.0" data-md-component="logo">
+    <a href=".." title="Chao World Modding Documentation v2.1.0" class="md-nav__button md-logo" aria-label="Chao World Modding Documentation v2.1.0" data-md-component="logo">
       
   <img src="../logo.png" alt="logo">
 
     </a>
-    Chao World Modding Documentation v2.0
+    Chao World Modding Documentation v2.1.0
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -371,6 +371,48 @@
   
   <span class="md-ellipsis">
     Reference - Chao Data Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CharChaoCustomAccessories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Character Chao using Custom Accessories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CheckCWE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Checking if CWE Exists
   </span>
   
 
@@ -946,6 +988,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#issue-6-fruit-mods-size-or-rotation-is-weird-in-black-market" class="md-nav__link">
+    <span class="md-ellipsis">
+      Issue 6: Fruit mods - Size or rotation is weird in Black Market
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issue-7-model-is-invisible-in-black-market" class="md-nav__link">
+    <span class="md-ellipsis">
+      Issue 7: Model is invisible in Black Market
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1045,6 +1105,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#issue-6-fruit-mods-size-or-rotation-is-weird-in-black-market" class="md-nav__link">
+    <span class="md-ellipsis">
+      Issue 6: Fruit mods - Size or rotation is weird in Black Market
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issue-7-model-is-invisible-in-black-market" class="md-nav__link">
+    <span class="md-ellipsis">
+      Issue 7: Model is invisible in Black Market
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1135,6 +1213,25 @@
 <li>Go to the Data menu, and open the Color Attributes dropdown. If you see anything in here, remove it by clicking the - button.</li>
 </ul>
 <p><img alt="Blender - Color Attributes" src="../imgs/Blender-RemoveColorAttributes.png" /></p>
+<h2 id="issue-6-fruit-mods-size-or-rotation-is-weird-in-black-market">Issue 6: Fruit mods - Size or rotation is weird in Black Market</h2>
+<p>To Fix this, Import your completed model and apply your transformations.</p>
+<p>For Size:</p>
+<ul>
+<li>Apply the Scale transformations by selecting the model in Object mode and pressing <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-a">A</kbd></span> and applying by scale.</li>
+</ul>
+<p>For rotation:</p>
+<ul>
+<li>Apply all transformations by pressing <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-a">A</kbd></span> and applying by All.</li>
+</ul>
+<p>Note that applying all transformations will move the object origin to 0, 0, 0 in Blender World Space, so make sure your model is centered on the world origin before applying transformations.  If your model isn't centered, right click on your model and go to Set Origin -&gt; Origin to Geometry.</p>
+<h2 id="issue-7-model-is-invisible-in-black-market">Issue 7: Model is invisible in Black Market</h2>
+<p>This is a known bug in Sonic Adventure 2 where if a model has multiple meshes, the game will not render anything in the Black Market. To fix this:</p>
+<ul>
+<li>Import your completed model into Blender (Remember to remove all other objects beforehand.)</li>
+<li>select all objects</li>
+<li>select your primary object (to be neat about the join you're about to make)</li>
+<li>press <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-j">J</kbd></span> to join all the objects together.</li>
+</ul>
 
 
 

@@ -22,7 +22,7 @@
     
     
       
-        <title>Lens Mods - Chao World Modding Documentation v2.0</title>
+        <title>Lens Mods - Chao World Modding Documentation v2.1.0</title>
       
     
     
@@ -90,7 +90,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Chao World Modding Documentation v2.0" class="md-header__button md-logo" aria-label="Chao World Modding Documentation v2.0" data-md-component="logo">
+    <a href=".." title="Chao World Modding Documentation v2.1.0" class="md-header__button md-logo" aria-label="Chao World Modding Documentation v2.1.0" data-md-component="logo">
       
   <img src="../logo.png" alt="logo">
 
@@ -103,7 +103,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Chao World Modding Documentation v2.0
+            Chao World Modding Documentation v2.1.0
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -210,12 +210,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Chao World Modding Documentation v2.0" class="md-nav__button md-logo" aria-label="Chao World Modding Documentation v2.0" data-md-component="logo">
+    <a href=".." title="Chao World Modding Documentation v2.1.0" class="md-nav__button md-logo" aria-label="Chao World Modding Documentation v2.1.0" data-md-component="logo">
       
   <img src="../logo.png" alt="logo">
 
     </a>
-    Chao World Modding Documentation v2.0
+    Chao World Modding Documentation v2.1.0
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -371,6 +371,48 @@
   
   <span class="md-ellipsis">
     Reference - Chao Data Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CharChaoCustomAccessories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Character Chao using Custom Accessories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CheckCWE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Checking if CWE Exists
   </span>
   
 
@@ -1291,7 +1333,7 @@
 <h3 id="before-we-start">Before we start:</h3>
 <ul>
 <li>Delete all default scene objects! These objects will crash your game if you do not delete them.</li>
-<li>Make sure SAIO is up to date! As of writing, SAIO 2.1.2 is the most recent. Keeping SAIO and Blender up-to-date will help anyone helping you eliminate issues.</li>
+<li>Make sure SAIO is up to date! As of writing, SAIO 2.1.5 is the most recent. Keeping SAIO and Blender up-to-date will help anyone helping you eliminate issues.</li>
 <li>Make sure SAIO is enabled in the Addons menu! If not, go to Edit -&gt; Preferences and go to the Addons menu to install/enable "Import-Export: Sonic Adventure I/O"</li>
 <li>If SAIO errors out on any operation, and it complains about .NET runtime, install the <a href="https://dotnet.microsoft.com/en-us/download">Microsoft .NET Runtimes</a> as instructed by the <a href="https://x-hax.github.io/SonicAdventureBlenderIO/">SAIO Documentation</a>.</li>
 </ul>
@@ -1348,7 +1390,7 @@
 <p><code>RegisterChaoTexlistLoad()</code> takes two arguments - The name of your texture file (without the .PAK at the end of it) and a reference call to the <code>NJS_TEXLIST</code> that you created.</p>
 <h3 id="adding-black-market-attributes">Adding Black Market Attributes</h3>
 <p>Add the following code below the texture list variables:
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">BlackMarketItemAttributes</span><span class="w"> </span><span class="n">BMExampleHat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">};</span>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">BlackMarketItemAttributes</span><span class="w"> </span><span class="n">BMExampleLens</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">};</span>
 </span></code></pre></div></p>
 <p>Let's break it down:</p>
 <p><code>BlackMarketItemAttributes</code> - This is a struct inside of the CWE API which contains the following, in the following order:</p>
@@ -1363,10 +1405,10 @@
 <p>RequiredEmblems - The amount of emblems required in the game (0 to 180 is possible in game, anything higher and they will not be able to be purchased through the Black Market.)</p>
 </li>
 <li>
-<p>-1 - Name - Keep this as is, we define it in the AddHat function.</p>
+<p>-1 - Name - Keep this as is, we define it in the AddLens function.</p>
 </li>
 <li>
-<p>-1 - Description - Keep this as is, we define it in the AddHat function.</p>
+<p>-1 - Description - Keep this as is, we define it in the AddLens function.</p>
 </li>
 <li>
 <p>0 - Unknown - Keep this as is.</p>
@@ -1377,9 +1419,9 @@
 <div class="language-cpp highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">ModelInfo</span><span class="o">*</span><span class="w"> </span><span class="n">MDLExampleHat</span><span class="p">;</span>
 </span></code></pre></div>
 <p>This is empty at the moment, so let's define it. In the <code>Init</code> function. underneath the <code>pathStr</code> variable, add the following for each model:</p>
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">MDLExampleHat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ModelInfo</span><span class="p">(</span><span class="n">pathStr</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;ExampleHat.sa2mdl&quot;</span><span class="p">);</span>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">MDLExampleLens</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ModelInfo</span><span class="p">(</span><span class="n">pathStr</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;ExampleLens.sa2mdl&quot;</span><span class="p">);</span>
 </span></code></pre></div>
-<p>Replace <code>MDLExampleHat</code> with whatever your <code>ModelInfo</code> pointer variable was called, and change the filename to the appropriate model.</p>
+<p>Replace <code>MDLExampleLens</code> with whatever your <code>ModelInfo</code> pointer variable was called, and change the filename to the appropriate model.</p>
 <h3 id="adding-the-lens">Adding the Lens</h3>
 <p>There's a few things we will need to add before a lens is able to be registered. In the <code>Extern "C"</code> function, add the following line just below the <code>RegisterDataFunc</code> function pointer:</p>
 <div class="language-cpp highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="w">    </span><span class="c1">//Lens function - Needed for CWE to recognize the lens.</span>

@@ -22,7 +22,7 @@
     
     
       
-        <title>Custom Character Chao Mods - Chao World Modding Documentation v2.0</title>
+        <title>Custom Character Chao Mods - Chao World Modding Documentation v2.1.0</title>
       
     
     
@@ -90,7 +90,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Chao World Modding Documentation v2.0" class="md-header__button md-logo" aria-label="Chao World Modding Documentation v2.0" data-md-component="logo">
+    <a href=".." title="Chao World Modding Documentation v2.1.0" class="md-header__button md-logo" aria-label="Chao World Modding Documentation v2.1.0" data-md-component="logo">
       
   <img src="../logo.png" alt="logo">
 
@@ -103,7 +103,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Chao World Modding Documentation v2.0
+            Chao World Modding Documentation v2.1.0
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -210,12 +210,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Chao World Modding Documentation v2.0" class="md-nav__button md-logo" aria-label="Chao World Modding Documentation v2.0" data-md-component="logo">
+    <a href=".." title="Chao World Modding Documentation v2.1.0" class="md-nav__button md-logo" aria-label="Chao World Modding Documentation v2.1.0" data-md-component="logo">
       
   <img src="../logo.png" alt="logo">
 
     </a>
-    Chao World Modding Documentation v2.0
+    Chao World Modding Documentation v2.1.0
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -371,6 +371,48 @@
   
   <span class="md-ellipsis">
     Reference - Chao Data Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CharChaoCustomAccessories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Character Chao using Custom Accessories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CheckCWE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Checking if CWE Exists
   </span>
   
 
@@ -1322,7 +1364,7 @@
 <h3 id="before-we-start">Before we start:</h3>
 <ul>
 <li>Delete all default scene objects! These objects will crash your game if you do not delete them.</li>
-<li>Make sure SAIO is up to date! As of writing, SAIO 2.1.2 is the most recent. Keeping SAIO and Blender up-to-date will help anyone helping you eliminate issues.</li>
+<li>Make sure SAIO is up to date! As of writing, SAIO 2.1.5 is the most recent. Keeping SAIO and Blender up-to-date will help anyone helping you eliminate issues.</li>
 <li>Make sure SAIO is enabled in the Addons menu! If not, go to Edit -&gt; Preferences and go to the Addons menu to install/enable "Import-Export: Sonic Adventure I/O"</li>
 <li>If SAIO errors out on any operation, and it complains about .NET runtime, install the <a href="https://dotnet.microsoft.com/en-us/download">Microsoft .NET Runtimes</a> as instructed by the <a href="https://x-hax.github.io/SonicAdventureBlenderIO/">SAIO Documentation</a>.</li>
 </ul>
@@ -1348,6 +1390,10 @@
 </div>
 <p>Now that you have added geometry, select the items you want to join together, <em>then</em> select the item you want to join them with, and press <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-j">J</kbd></span>. This will join all the geometry into the destination object, and maintain the necessary flags in the object.</p>
 <p>To select the geometry that you have added in Edit Mode, deselect everything, hover your pointer over the geometry you want to edit, and press <span class="keys"><kbd class="key-l">L</kbd></span>. This will select the object so that you can UV Unwrap it. Mark seams as necessary before UV unwrapping.  If you're having trouble viewing the object, press <span class="keys"><kbd class="key-slash">/</kbd></span> to go into local mode and focus on the object you have selected.</p>
+<div class="admonition warning">
+<p class="admonition-title">Moving geometry</p>
+<p>If you move any of the geometry of the Chao, animations will break!</p>
+</div>
 <h3 id="texturing">Texturing</h3>
 <div class="admonition danger">
 <p class="admonition-title">Heads up!</p>
@@ -1414,6 +1460,10 @@
 <div class="admonition info">
 <p class="admonition-title">Using names</p>
 <p>To use a name to evolve the Chao, you will need to use a <a href="https://en.cppreference.com/w/c/string/byte/strcmp">strcmp</a> call to compare the name to the string you need. You also have to take into mind the <a href="https://chao-island.com/guides/chao-hacking/hacking-pc/chao-name-encoding">Chao Name Encoding</a> when writing your name. For example, when the Cosmo Chao mod was made, "\x23\x4F\x53\x4D\x4F" was used as a condition to check for the name "Cosmo" - Take this into mind!</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Using custom accessories</p>
+<p>Go <a href="../CharChaoCustomAccessories/">here</a> to find out how to use custom accessories for the Evolution Function.</p>
 </div>
 <h3 id="adding-the-custom-chao">Adding the Custom Chao</h3>
 <p>Now we set up the Chao! In the <code>CWELoad</code> function, create a <code>CWE_API_CHAO_DATA</code> struct variable. For example:</p>
