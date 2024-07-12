@@ -282,11 +282,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../tools/" class="md-nav__link">
+      <a href="../resources/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Tools
+    Resources
   </span>
   
 
@@ -1311,9 +1311,9 @@
 <h1 id="custom-lenses">Custom Lenses</h1>
 <h2 id="pre-requisites">Pre-requisites:</h2>
 <ul>
-<li>Have completed the <a href="../MakingProject/">Making a DLL Project</a> section</li>
-<li>The latest version of Blender<ul>
-<li>Blender SAIO plugin</li>
+<li>Have completed the <a href="../MakingProject/">Making a DLL Project</a> section
+*version 4.1 of <a href="https://www.blender.org/">Blender</a><ul>
+<li><a href="https://github.com/X-Hax/SonicAdventureBlenderIO">Blender SAIO plugin v2.1.5</a></li>
 </ul>
 </li>
 <li>Basic 3D Theory</li>
@@ -1322,7 +1322,7 @@
 <li>Chao World Extended (Versions &gt; 9.5)</li>
 <li>Patience</li>
 </ul>
-<p>Tools can be downloaded <a href="../tools/">here</a></p>
+<p>Tools can be downloaded <a href="../resources/">here</a></p>
 <h2 id="what-is-a-lens">What is a "Lens"</h2>
 <p>Lenses are a Chao World Extended addition, allowing you to change the texture of your Chao's eyes. They were introduced in Version 8 alongside the Custom Animal system, and are now available for customization and modification (&gt;version 9.5)</p>
 <h2 id="modelling">Modelling</h2>
@@ -1363,7 +1363,7 @@
 <h3 id="adding-the-dependencies">Adding the dependencies:</h3>
 <p>Go into your Sonic Adventure 2 folder, and find the "programming" directory. Copy all of the files into your Visual Studio Project folder.</p>
 <p><img alt="Adding Dependencies" src="../imgs/FileManagement_AddingDependencies.png" /></p>
-<p>For advanced users, the most up-to-date dependencies can be found in <a href="../tools/">Tools</a> inside the "SA2Modloader includes" github page.</p>
+<p>For advanced users, the most up-to-date dependencies can be found in <a href="../resources/">Tools</a> inside the "SA2Modloader includes" github page.</p>
 <p>Clone or download <code>ModelInfo.h</code> and <code>ModelInfo.cpp</code> from <a href="https://github.com/X-Hax/sa2-mod-loader/tree/master/libmodutils">LibModUtils</a>.</p>
 <p>To download the file in Github, click on each file you want, and click the download button on the right hand side of the header of the code preview.</p>
 <p><img alt="Github - Download Raw File" src="../imgs/github-DownloadRawFile.png" /></p>
@@ -1427,17 +1427,21 @@
 <div class="language-cpp highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="w">    </span><span class="c1">//Lens function - Needed for CWE to recognize the lens.</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="kr">__declspec</span><span class="p">(</span><span class="n">dllexport</span><span class="p">)</span><span class="w"> </span><span class="kt">void</span><span class="p">(</span><span class="kr">__cdecl</span><span class="o">*</span><span class="w"> </span><span class="n">ALS_LensSpecial</span><span class="p">)(</span><span class="n">ObjectMaster</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">ObjectMaster</span><span class="o">*</span><span class="p">);</span>
 </span></code></pre></div>
-<p>In the <code>Init</code> function, add the following line just below the <code>PathStr</code> varaible:</p>
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="w">    </span><span class="c1">//Lens function - This talks to CWE to get the lens to work when registering it as a special object.</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="n">ALS_LensSpecial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">decltype</span><span class="p">(</span><span class="n">ALS_LensSpecial</span><span class="p">))</span><span class="n">GetProcAddress</span><span class="p">(</span><span class="n">GetModuleHandle</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;CWE&quot;</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;ALS_LensSpecial&quot;</span><span class="p">);</span>
+<p>After the line we just added, Generate an ID for each of the lenses you are making:</p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="w">    </span><span class="c1">//Generate an ID for each lens</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ExampleLensID</span><span class="p">;</span>
 </span></code></pre></div>
-<p>Now add the <code>RegisterChaoSpecial()</code> function, to register it to the Black Market:</p>
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="w">    </span><span class="c1">//Register your lens to the black market:</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="n">cwe_api</span><span class="o">-&gt;</span><span class="n">RegisterChaoSpecial</span><span class="p">(</span><span class="n">MDLExampleLensBox</span><span class="o">-&gt;</span><span class="n">getmodel</span><span class="p">(),</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Example_texlist</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">BMExampleLens</span><span class="p">,</span><span class="w"> </span><span class="n">ALS_LensSpecial</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Lens Name&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Lens Description&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span>
+<p>In the <code>Init</code> function, add the following line just below the <code>PathStr</code> varaible:</p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="w">    </span><span class="c1">//Lens function - This talks to CWE to get the lens to work when registering it as a special object.</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="n">ALS_LensSpecial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">decltype</span><span class="p">(</span><span class="n">ALS_LensSpecial</span><span class="p">))</span><span class="n">GetProcAddress</span><span class="p">(</span><span class="n">GetModuleHandle</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;CWE&quot;</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;ALS_LensSpecial&quot;</span><span class="p">);</span>
+</span></code></pre></div>
+<p>Now assign the lens ID to the <code>RegisterChaoSpecial()</code> function, to register it to the Black Market:</p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="w">    </span><span class="c1">//Register your lens to the black market:</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="n">ExampleLensID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cwe_api</span><span class="o">-&gt;</span><span class="n">RegisterChaoSpecial</span><span class="p">(</span><span class="n">MDLExampleLensBox</span><span class="o">-&gt;</span><span class="n">getmodel</span><span class="p">(),</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Example_texlist</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">BMExampleLens</span><span class="p">,</span><span class="w"> </span><span class="n">ALS_LensSpecial</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Lens Name&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Lens Description&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span>
 </span></code></pre></div>
 <p>And associate the lens with your texture:</p>
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">//Associate the lens as a custom eye color:</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">cwe_api</span><span class="o">-&gt;</span><span class="n">RegisterEyeColor</span><span class="p">(</span><span class="s">&quot;ExampleTextureName&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Example_texlist</span><span class="p">,</span><span class="w"> </span><span class="n">ExampleLensID</span><span class="p">);</span>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1">//Associate the lens as a custom eye color:</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">cwe_api</span><span class="o">-&gt;</span><span class="n">RegisterEyeColor</span><span class="p">(</span><span class="s">&quot;ExampleTextureName&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Example_texlist</span><span class="p">,</span><span class="w"> </span><span class="n">ExampleLensID</span><span class="p">);</span>
 </span></code></pre></div>
 <h3 id="building-the-project">Building the Project:</h3>
 <p>Your solution configuration should be "Release" and your solution platform should be "x86" so that your mod is small, and does not have the additional code inside your mod. Your configurations should look like the following image below:</p>
@@ -1446,7 +1450,7 @@
 <p>If you still can't get your build to work, try using the example mod as a template.</p>
 <h2 id="creating-the-mod">Creating the mod:</h2>
 <p>If you haven't followed <a href="../MakingProject/">Making a Project</a>, set up your mod folder. Copy the DLL file from inside your release folder into your mod folder and edit your "mod.ini" file to contain your DLLFile. For example:</p>
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="na">DLLFile</span><span class="o">=</span><span class="s">ExampleMod.dll</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="na">DLLFile</span><span class="o">=</span><span class="s">ExampleMod.dll</span>
 </span></code></pre></div>
 <p>Place your .SA2MDL models inside the mod folder.</p>
 <p>Add a folder in your mod directory called "gd_PC", and inside that folder, add another directory called "PRS". Inside the "PRS" folder, add your <code>.PAK</code> texture files.</p>
