@@ -14,21 +14,7 @@ The Fortune teller in the Chao Kindergarten can give random names to a player wh
 !!! note
     It is *recommended* to only use alphanumeric characters, as the fortune teller adding system does not support every type of character.
 
-## Code:
-
-### Adding the dependencies:
-
-Go into your Sonic Adventure 2 folder, and find the "programming" directory. Copy all of the files into your Visual Studio Project folder.
-
-![Adding Dependencies](imgs/FileManagement_AddingDependencies.png)
-
-For advanced users, the most up-to-date dependencies can be found in [Tools](tools.md) inside the "SA2Modloader includes" github page.
-
-### Copying the boilerplate code:
-
-Add a new source file and call it `main.cpp`
-
-Copy the [Chao World Extended API Code Template](CWEAPICodeTemplate.md) and paste it into the fresh `main.cpp` file that you've added to the Visual Studio project.
+## Code
 
 Above the CWELoad function, add a `char *` variable. For example:
 
@@ -65,3 +51,7 @@ Save your "mod.ini" file and test your mod!
 !!! warning "Disclaimer:"
 
     As there are a lot of custom names in Chao World Extended, it may take some time for your custom name to appear. 
+
+## Troubleshooting:
+
+If you have any issues with any of the mod creation process, check the [Troubleshooting page](troubleshooting.md) to see if your problem is mentioned. If you have other issues with the mod creation process, ask around in the Chao Island Discord. If the issue is of importance to note, it will be added to the documentation after being mentioned.

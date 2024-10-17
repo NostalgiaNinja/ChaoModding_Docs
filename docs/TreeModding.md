@@ -3,8 +3,8 @@
 ## Pre-requisites:
 
 * Have completed the [Making a DLL Project](MakingProject.md) section
-* The latest version of Blender
-    * Blender SAIO plugin
+* version 4.2 of [Blender](https://www.blender.org/)
+    * [Blender SAIO plugin v2.2.0](https://github.com/X-Hax/SonicAdventureBlenderIO)
 * Intermediate 3D Theory
 * Basic C++ Programming skills
 * SA Tools (Make sure you've created an SA Tools Project!)
@@ -12,7 +12,7 @@
 * An existing fruit mod.
 * Patience
 
-Tools can be downloaded [here](tools.md)
+Tools can be downloaded [here](resources.md)
 
 ## What is a "Tree"?
 
@@ -23,7 +23,7 @@ Custom trees are an extension of the classic style of trees given to you by Soni
 ### Before we start:
 
 * Delete all default scene objects! These objects will crash your game if you do not delete them.
-* Make sure SAIO is up to date! As of writing, SAIO 2.1.2 is the most recent. Keeping SAIO and Blender up-to-date will help anyone helping you eliminate issues.
+* Make sure SAIO is up to date! As of writing, SAIO 2.1.5 is the most recent. Keeping SAIO and Blender up-to-date will help anyone helping you eliminate issues.
 * Make sure SAIO is enabled in the Addons menu! If not, go to Edit -> Preferences and go to the Addons menu to install/enable "Import-Export: Sonic Adventure I/O"
 * If SAIO errors out on any operation, and it complains about .NET runtime, install the [Microsoft .NET Runtimes](https://dotnet.microsoft.com/en-us/download) as instructed by the [SAIO Documentation](https://x-hax.github.io/SonicAdventureBlenderIO/).
 
@@ -129,3 +129,7 @@ Place your .SA2MDL models inside the mod folder.
 Add a folder in your mod directory called "gd_PC", and inside that folder, add another directory called "PRS". Inside the "PRS" folder, add your `.PAK` texture files.
 
 Save your "mod.ini" file and test your mod!
+
+## Troubleshooting:
+
+If you have any issues with any of the mod creation process, check the [Troubleshooting page](troubleshooting.md) to see if your problem is mentioned. If you have other issues with the mod creation process, ask around in the Chao Island Discord. If the issue is of importance to note, it will be added to the documentation after being mentioned.

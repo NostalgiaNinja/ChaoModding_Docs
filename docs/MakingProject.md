@@ -4,9 +4,11 @@
 * Sonic Adventure 2
 * Latest SA Tools
 
-See [Tools](tools.md) to download these required tools if you haven't already.
+See [Tools](resources.md) to download these required tools if you haven't already.
 
-## Setting up a mod folder:
+## Old Method: Manually making a mod folder
+
+### Setting up a mod folder:
 
 1. Create a folder in the /Mods folder in Sonic Adventure 2
 2. Create a new "mod.ini" file
@@ -23,6 +25,26 @@ See [Tools](tools.md) to download these required tools if you haven't already.
     DLLFile=
     Category=
     ```
+
+## New Method: SAModManager
+
+1. Open SA Mod Manager and click on "New Mod"
+
+![New Mod](imgs/ModManager_Main-NewMod.png)
+
+2. Click on "New Mod (For developers)" and click "OK"
+
+![New mod (for developers)](imgs/ModManager_NewMod-forDevs.png)
+
+3. Fill out the information on the "Mod Info" tab
+
+![Mod info tab](imgs/ModManager_NewMod_ModInfo.png)
+
+4. Move over to the "Update Info" tab if you want to autoupdate your mod (optional) and fill out the information there, too! For Github, you just need your author and repository info, and the release asset to update as necessary. For Gamebanana you just need the mod ID (found in your mod page)
+
+![Update Info tab](imgs/ModManager_NewMod_UpdateInfo.png)
+
+5. Your mod folder will be automatically made for you. The mod folder will open once it has been created, and you're ready for the next step.
 
 ## Creating a project
 

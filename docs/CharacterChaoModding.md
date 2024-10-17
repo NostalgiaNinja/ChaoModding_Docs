@@ -3,8 +3,8 @@
 ## Pre-requisites:
 
 * Have completed the [Making a DLL Project](MakingProject.md) section
-* The latest version of Blender
-    * Blender SAIO plugin
+* version 4.2 of [Blender](https://www.blender.org/)
+    * [Blender SAIO plugin v2.2.0](https://github.com/X-Hax/SonicAdventureBlenderIO)
 * Intermediate 3D Theory
 * Basic C++ Programming skills
 * SA Tools (Make sure you've created an SA Tools Project!)
@@ -20,7 +20,7 @@ Character Chao are special Chao that were used for events in Sonic Adventure 2: 
 ### Before we start:
 
 * Delete all default scene objects! These objects will crash your game if you do not delete them.
-* Make sure SAIO is up to date! As of writing, SAIO 2.1.2 is the most recent. Keeping SAIO and Blender up-to-date will help anyone helping you eliminate issues.
+* Make sure SAIO is up to date! As of writing, SAIO 2.1.5 is the most recent. Keeping SAIO and Blender up-to-date will help anyone helping you eliminate issues.
 * Make sure SAIO is enabled in the Addons menu! If not, go to Edit -> Preferences and go to the Addons menu to install/enable "Import-Export: Sonic Adventure I/O"
 * If SAIO errors out on any operation, and it complains about .NET runtime, install the [Microsoft .NET Runtimes](https://dotnet.microsoft.com/en-us/download) as instructed by the [SAIO Documentation](https://x-hax.github.io/SonicAdventureBlenderIO/).
 
@@ -44,6 +44,9 @@ Add any new geometry on the Chao by making the necessary meshes as they should a
 Now that you have added geometry, select the items you want to join together, *then* select the item you want to join them with, and press ++ctrl+j++. This will join all the geometry into the destination object, and maintain the necessary flags in the object.
 
 To select the geometry that you have added in Edit Mode, deselect everything, hover your pointer over the geometry you want to edit, and press ++l++. This will select the object so that you can UV Unwrap it. Mark seams as necessary before UV unwrapping.  If you're having trouble viewing the object, press ++slash++ to go into local mode and focus on the object you have selected.
+
+!!! warning "Moving geometry"
+    If you move any of the geometry of the Chao, animations will break!
 
 ### Texturing
 
@@ -77,41 +80,9 @@ Go to SAIO Tools -> Material and click the "Update Material Textures" button. If
 
 Export your SA2MDL model if everything goes well. Save a .blend file just in case something goes wrong!
 
-## Coding
+## Code
 
 If you have not created a Visual Studio project yet, follow the instructions on "[Setting up your development environment](DevSetup.md)".
-
-### Adding the dependencies:
-
-Go into your Sonic Adventure 2 folder, and find the "programming" directory. Copy all of the files into your Visual Studio Project folder.
-
-![Adding Dependencies](imgs/FileManagement_AddingDependencies.png)
-
-For advanced users, the most up-to-date dependencies can be found in [Tools](tools.md) inside the "SA2Modloader includes" github page.
-
-Clone or download `ModelInfo.h` and `ModelInfo.cpp` from [LibModUtils](https://github.com/X-Hax/sa2-mod-loader/tree/master/libmodutils).
-
-To download the file in Github, click on each file you want, and click the download button on the right hand side of the header of the code preview.
-
-![Github - Download Raw File](imgs/github-DownloadRawFile.png)
-
-Place these two files into your Visual Studio Project folder, where the other dependencies have been placed.
-
-You will need to change the first include in `ModelInfo.cpp` in order to fix a problem -- change `#include "stdafx.h"` to `#include "pch.h"`.
-
-If you don't replace the include, this error will occur!
-
-![Replacing an include](imgs/replaceinclude.png)
-
-Afterwards, Add the files into your project by right clicking "Header Files" in your project explorer and going to Add -> Existing Item... to add `ModelInfo.h` and `ModelInfo.cpp`
-
-![Add Existing Items](imgs/AddExistingFilesVS.png)
-
-### Copying the boilerplate code:
-
-Add a new source file and call it `main.cpp`
-
-Copy the [Chao World Extended API Code Template](CWEAPICodeTemplate.md) and paste it into the fresh `main.cpp` file that you've added to the Visual Studio project.
 
 ### Adding Custom Models:
 
@@ -147,6 +118,9 @@ Explore the `tp->Data1.Chao->ChaoDataBase_ptr->` structrure by pressing ++ctrl+s
 
 !!! info "Using names"
     To use a name to evolve the Chao, you will need to use a [strcmp](https://en.cppreference.com/w/c/string/byte/strcmp) call to compare the name to the string you need. You also have to take into mind the [Chao Name Encoding](https://chao-island.com/guides/chao-hacking/hacking-pc/chao-name-encoding) when writing your name. For example, when the Cosmo Chao mod was made, "\x23\x4F\x53\x4D\x4F" was used as a condition to check for the name "Cosmo" - Take this into mind!
+
+!!! hint "Using custom accessories"
+    Go [here](CharChaoCustomAccessories.md) to find out how to use custom accessories for the Evolution Function.
 
 ### Adding the Custom Chao
 
@@ -229,3 +203,7 @@ Place your .SA2MDL models inside the mod folder.
 Add a folder in your mod directory called "gd_PC", and inside that folder, add another directory called "PRS". Inside the "PRS" folder, add your `.PAK` texture files.
 
 Save your "mod.ini" file and test your mod!
+
+## Troubleshooting:
+
+If you have any issues with any of the mod creation process, check the [Troubleshooting page](troubleshooting.md) to see if your problem is mentioned. If you have other issues with the mod creation process, ask around in the Chao Island Discord. If the issue is of importance to note, it will be added to the documentation after being mentioned.

@@ -3,15 +3,15 @@
 ## Pre-requisites:
 
 * Have completed the [Making a DLL Project](MakingProject.md) section
-* The latest version of Blender
-    * Blender SAIO plugin
+* version 4.2 of [Blender](https://www.blender.org/)
+    * [Blender SAIO plugin v2.2.0](https://github.com/X-Hax/SonicAdventureBlenderIO)
 * Intermediate 3D Theory
 * Basic C++ Programming skills
 * SA Tools (Make sure you've created an SA Tools Project!)
 * Chao World Extended (Versions > 9.5)
 * Patience
 
-Tools can be downloaded [here](tools.md)
+Tools can be downloaded [here](resources.md)
 
 ## What is an "Accessory"?
 
@@ -20,7 +20,7 @@ Accessories are a part of Chao World Extended, and have been around since versio
 ## Before we start:
 
 * Delete all default scene objects! These objects will crash your game if you do not delete them.
-* Make sure SAIO is up to date! As of writing, SAIO 2.1.2 is the most recent. Keeping SAIO and Blender up-to-date will help anyone helping you eliminate issues.
+* Make sure SAIO is up to date! As of writing, SAIO 2.1.5 is the most recent. Keeping SAIO and Blender up-to-date will help anyone helping you eliminate issues.
 * Make sure SAIO is enabled in the Addons menu! If not, go to Edit -> Preferences and go to the Addons menu to install/enable "Import-Export: Sonic Adventure I/O"
 * If SAIO errors out on any operation, and it complains about .NET runtime, install the [Microsoft .NET Runtimes](https://dotnet.microsoft.com/en-us/download) as instructed by the [SAIO Documentation](https://x-hax.github.io/SonicAdventureBlenderIO/).
 
@@ -69,7 +69,7 @@ al_ncz:
 
 Adjust for whichever Chao type you use.
 
-Select the 000 object and go to SAIO Tools -> Armature from Objects. Press OK on the dialogue box to generate a new armature. Delete the imported Chao (the hierarchy starting with the 000 object) and let's begin!
+Select the 000 object and go to SAIO Tools -> Utilities -> Armature from Objects. Press OK on the dialogue box to generate a new armature. Delete the imported Chao (the hierarchy starting with the 000 object) and let's begin!
 
 ![Armature from Objects](imgs/blender-ArmatureFromObjects.png)
 
@@ -82,6 +82,9 @@ Select each of your models that you have imported or modelled, and go to the "Da
 select your items to bind to the body, select the bone that corresponds to the name of the object (make sure that the bone selected has a rounded square surrounding it) and press ++ctrl+p++ to parent the bone (Do not use bone relative). go into pose mode (++ctrl+tab++) to test if the bone controls the accessory as well as the body part.
 
 If your bone controls the accessory as you like it, there is no need for the next step. If not, do the following:
+
+!!! tip "How to select bones"
+    Select the Armature object, go into pose mode, and then select the bone you want to use.  Once selected, go back into object mode.
 
 weight paint your model by selecting your model (go out of pose mode by pressing ++ctrl+tab++ again), press A (to select all the faces), and go to the "Data" panel of your model you want to weight paint. A new section should appear where we defined the vertex groups. make sure the "Weight" slider is at 1.000 and click "Assign". This should make all the faces follow the bone we created. Tab out of Edit mode and follow the next step.
 
@@ -117,37 +120,13 @@ Save the texture file as `.PAK`, and keep it aside for later.
 
 If you have not created a Visual Studio project yet, follow the instructions on "[Setting up your development environment](DevSetup.md)".
 
-### Adding the dependencies:
+### Creating accessory IDs
 
-Go into your Sonic Adventure 2 folder, and find the "programming" directory. Copy all of the files into your Visual Studio Project folder.
+Inside the `extern "C"` function, create an ID that we will use for accessories:
 
-![Adding Dependencies](imgs/FileManagement_AddingDependencies.png)
-
-For advanced users, the most up-to-date dependencies can be found in [Tools](tools.md) inside the "SA2Modloader includes" github page.
-
-Clone or download `ModelInfo.h` and `ModelInfo.cpp` from [LibModUtils](https://github.com/X-Hax/sa2-mod-loader/tree/master/libmodutils).
-
-To download the file in Github, click on each file you want, and click the download button on the right hand side of the header of the code preview.
-
-![Github - Download Raw File](imgs/github-DownloadRawFile.png)
-
-Place these two files into your Visual Studio Project folder, where the other dependencies have been placed.
-
-You will need to change the first include in `ModelInfo.cpp` in order to fix a problem -- change `#include "stdafx.h"` to `#include "pch.h"`.
-
-If you don't replace the include, this error will occur!
-
-![Replacing an include](imgs/replaceinclude.png)
-
-Afterwards, Add the files into your project by right clicking "Header Files" in your project explorer and going to Add -> Existing Item... to add `ModelInfo.h` and `ModelInfo.cpp`
-
-![Add Existing Items](imgs/AddExistingFilesVS.png)
-
-### Copying the boilerplate code:
-
-Add a new source file and call it `main.cpp`
-
-Copy the [Chao World Extended API Code Template](CWEAPICodeTemplate.md) and paste it into the fresh `main.cpp` file that you've added to the Visual Studio project.
+```cpp
+    int ExampleAccessoryID;
+```
 
 ### Creating a custom Texture file:
 
@@ -239,6 +218,20 @@ Let's break it down:
 
 Do this for as many accessories as you wish to create! Reminder that there is a limit of 255 accessories, some taken up by CWE.
 
+!!! tip "MakeBald function"
+    If you want to avoid head clipping on the Chao accessory, use the following code to flatten the head of the Chao, and disable jiggle on the Chao:
+
+```cpp
+    cwe_api->AccessoryMakeBald(ExampleAccessoryID);
+```
+
+!!! tip "DisableJiggle function"
+    If you want to stop the Chao body from clipping on an accessory, you might be interested in stopping the jiggle physics of a Chao. The following code does this:
+
+```cpp
+    cwe_api-AccessoryDisableJiggle(ExampleAccessoryID);
+```
+
 ### Building the Project:
 
 Your solution configuration should be "Release" and your solution platform should be "x86" so that your mod is small, and does not have the additional code inside your mod. Your configurations should look like the following image below:
@@ -262,3 +255,7 @@ Place your .SA2MDL models inside the mod folder.
 Add a folder in your mod directory called "gd_PC", and inside that folder, add another directory called "PRS". Inside the "PRS" folder, add your `.PAK` texture files.
 
 Save your "mod.ini" file and test your mod!
+
+## Troubleshooting:
+
+If you have any issues with any of the mod creation process, check the [Troubleshooting page](troubleshooting.md) to see if your problem is mentioned. If you have other issues with the mod creation process, ask around in the Chao Island Discord. If the issue is of importance to note, it will be added to the documentation after being mentioned.

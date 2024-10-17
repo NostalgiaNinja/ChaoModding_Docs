@@ -1,14 +1,16 @@
-site_name: Chao World Modding Documentation v2.0
-site_url: https://example.com
+site_name: Chao World Modding Documentation v2.2.0
+site_url: https://nostalgianinja.github.io/ChaoModding_Docs/
 
 nav:
   - Home: index.md
   - Useful pages:
-    - Tools: tools.md
+    - Resources: resources.md
     - Examples: examples.md
     - CWE API Code Template: CWEAPICodeTemplate.md
     - Reference - SA2MDL Chao Filenames: RefChaoFiles.md
     - Reference - Chao Data Structure: ChaoDataStruct.md
+    - Character Chao using Custom Accessories: CharChaoCustomAccessories.md
+    - Checking if CWE Exists: CheckCWE.md
   - Tips for beginners:
     - Texturing: beginTexturing.md
     - UV Unwrapping: beginUV.md
@@ -20,6 +22,7 @@ nav:
     - Making a Project: MakingProject.md
     - Setting up your development environment: DevSetup.md
   - Creating Mods:
+    - Animation Modding: AnimModding.md
     - Fortune Teller Name Mods: FTNaming.md
     - Hat Mods: HatModding.md
     - Fruit Mods: FruitModding.md
@@ -29,6 +32,7 @@ nav:
     - Custom Character Chao Mods: CharacterChaoModding.md
     - Lens Mods: LensModding.md   
   - Troubleshooting: troubleshooting.md
+  - Contributing: CONTRIBUTING.md
   - Credits: credits.md
 
 theme:
@@ -61,3 +65,6 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.keys
+
+plugins:
+  - social: 

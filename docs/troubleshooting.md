@@ -2,7 +2,9 @@
 
 Below, are all the common issues that you'll have with your mods:
 
-## Issue 1: Texture File Not Found
+## General issues:
+
+### Texture File Not Found
 
 ![Crash Dialog](imgs/SA2_Crash1.png)
 ![Crash Debug Console](imgs/SA2_Crash2.png)
@@ -19,7 +21,7 @@ A common crash would be that the texture file fails to load, and the game crashe
 
 * DO NOT rename your texture file! Doing so causes the game to incorrectly find the file, and crashes the game. Instead, use the Save As option in TextureEditor, and make a new texture file with the name as given.
 
-## Issue 2: Model File Not Found
+### Model File Not Found
 
 ![Black Market - Item Not Found](imgs/BlackMarket_Missing_Item.png)
 
@@ -35,7 +37,9 @@ std::string pathStr = std::string(path) + "\\";
 
 This places it in the same place as where you put your `mod.ini` file.
 
-## Issue 3: Character Chao - texture index is out of bounds
+## Character Chao:
+
+### texture index is out of bounds
 
 ![Character Chao - Index out of bounds](imgs/CharacterChao_IndexOutOfBounds.png)
 
@@ -55,7 +59,7 @@ also, check the SAIO Material Properties on every object (including eyes, mouth 
 
 ![SAIO Material Properties](imgs/TextureCount-SAIO.png)
 
-## Issue 4: Character Chao - Number of Nodes is not 40
+### Number of Nodes is not 40
 
 ![Character Chao - Number of nodes is not 40](imgs/CharacterChao-NumberOfNodes.png)
 
@@ -75,7 +79,7 @@ In Blender:
 
 Note: If you accidentally joined objects from the Chao Model together, you will have to restart from importing the Chao model, as you have destroyed node data that is important for the Chao model to function.
 
-## Issue 5: Character Chao - Wrong Chunk Type
+### Wrong Chunk Type
 
 ![Character Chao - Wrong Chunk Type](imgs/CharacterChao-WrongChunkType.png)
 
@@ -86,3 +90,32 @@ In Blender:
 * Go to the Data menu, and open the Color Attributes dropdown. If you see anything in here, remove it by clicking the - button.
 
 ![Blender - Color Attributes](imgs/Blender-RemoveColorAttributes.png)
+
+### Emote ball missing
+
+This happens when the alpha channel for the Emote Ball has not been set. A reminder that it should be AARRGGBB (Use a web color helper, and just put FF at the front of the color you want for full alpha transparency.)
+
+## Fruit:
+
+### Fruit mods - Size or rotation is weird in Black Market
+
+To Fix this, Import your completed model and apply your transformations.
+
+For Size:
+
+* Apply the Scale transformations by selecting the model in Object mode and pressing ++ctrl+a++ and applying by scale.
+
+For rotation:
+
+* Apply all transformations by pressing ++ctrl+a++ and applying by All.
+
+Note that applying all transformations will move the object origin to 0, 0, 0 in Blender World Space, so make sure your model is centered on the world origin before applying transformations.  If your model isn't centered, right click on your model and go to Set Origin -> Origin to Geometry.
+
+### Model is invisible in Black Market
+
+This is a known bug in Sonic Adventure 2 where if a model has multiple meshes, the game will not render anything in the Black Market. To fix this:
+
+* Import your completed model into Blender (Remember to remove all other objects beforehand.)
+* select all objects
+* select your primary object (to be neat about the join you're about to make)
+* press ++ctrl+j++ to join all the objects together.

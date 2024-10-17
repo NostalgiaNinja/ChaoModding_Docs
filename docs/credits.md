@@ -25,6 +25,10 @@ A special thank you to all the following people:
 * Eru (Lenses, Discord channel support)
 * debugmode404 (Testing)
 * BassboostedMoonChao (Media, testing)
+* Soephond (Example Code)
+* Choa (Testing, Finding an issue in Fruit Mods to fix)
+* Jbrydab (Initial install notes)
+* RAYTRAC3R, Exant (Accessory code for Character Chao)
 
 ## Reference
 
