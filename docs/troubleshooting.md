@@ -37,6 +37,24 @@ std::string pathStr = std::string(path) + "\\";
 
 This places it in the same place as where you put your `mod.ini` file.
 
+## Animation:
+
+### The model crashes when an animation is started
+
+Chao World Extended runs fine, but when a Chao starts to do a replaced animation, your game crashes!
+
+In order to fix this, you'll need to go into the dope sheet and delete all the scaling keyframes, as Chao don't support any scale keyframing.
+
+Select all your bones, then go to the animation timeline, change the editor type to Dope Sheet, Action Editor and then hover over your timeline. Press ++ctrl+spc++ to enter "Toggle Maximize Area". This will allow us to see all our keyframes without distractions, and is an optional, but helpful shortcut.
+
+select each scale keyframe in your timeline (++shift++ select if you want to select multiple) and then press ++x++ or ++del++ to delete the keyframes.
+
+![Dope Sheet - Deleting scale keyframes](imgs/blender-Delete-ScaleKeyframes.png)
+
+To exit the "Toggle Maximize Area" mode, press ++ctrl+spc++ again.
+
+Save your animation and try again.
+
 ## Character Chao:
 
 ### texture index is out of bounds

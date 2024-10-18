@@ -26,6 +26,14 @@ Open your branch and submit a pull request. The main branch then gets a request 
 
 Open the .md file of choice that needs to be changed with an editor of choice.  Make the necessary changes and then save. Create a Pull Request with the changes and request for them to be pulled into the Master repository to be built.  Thereafter, it will be built into the main MKDocs repository.
 
+### Special plugins
+
+MKDocs material has a few extra plugins enabled in this documentation, allowing some extra syntactial sugar to be added to make the guides prettier. Clicking the links below will take you to the relevant MKDocs Material documentation for each plugin that is actively used:
+
+* [Admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/)
+* [Python Markdown: Keys](https://facelessuser.github.io/pymdown-extensions/extensions/keys/) 
+* [Social Cards](https://squidfunk.github.io/mkdocs-material/setup/setting-up-social-cards/?h=social)
+
 ## Creating new topics
 
 Create a new .md file with the topic you'd like to add, add the topic in the "mkdocs.yml" file, and then make a Pull Request.
