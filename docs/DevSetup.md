@@ -13,29 +13,39 @@
 
 ## Adding the dependencies:
 
-Go into your Sonic Adventure 2 folder, and find the "programming" directory. Copy all of the files into your Visual Studio Project folder into your Visual Studio project directory. Note that your files will be read in the same directory as the Microsoft Visual Studio Solution file.
+!!! danger "Old documentation - Broken!"
+    SA2ModLoader previously came with a Programming directory and was easier to mod with.  XHax removed this and only provides a single binary, so now dependencies will have to be downloaded through the Github repository.
+
+~~Go into your Sonic Adventure 2 folder, and find the "programming" directory. Copy all of the files into your Visual Studio Project folder into your Visual Studio project directory. Note that your files will be read in the same directory as the Microsoft Visual Studio Solution file.
 
 ![Adding Dependencies](imgs/FileManagement_AddingDependencies.png)
 
-For advanced users, the most up-to-date dependencies can be found in [Tools](resources.md) inside the "SA2Modloader includes" github page.
+!!! note "Changes to previous versions"
+    SAModLoader no longer provides a "Programming" directory for modding the game. Download the SA2 Mod Loader repository and then copy the necessary files as needed.
 
-Clone or download `ModelInfo.h` and `ModelInfo.cpp` from [LibModUtils](https://github.com/X-Hax/sa2-mod-loader/tree/master/libmodutils).
+Download the SA2 Mod Loader github repository [here](https://github.com/X-Hax/sa2-mod-loader/archive/refs/heads/master.zip) and extract it in an appropriate place.  For me, I usually keep a "libs" folder for all my libraries.
 
-To download the file in Github, click on each file you want, and click the download button on the right hand side of the header of the code preview.
+Once your repository zip folder is downloaded, go into `SA2ModLoader/Include`. Copy all the files here into your Visual Studio Project Directory.
 
-![Github - Download Raw File](imgs/github-DownloadRawFile.png)
+Go back to the extracted zip folder, and go into `libmodutils`. There are a few files we interact with here:
 
-Place these two files into your Visual Studio Project folder, where the other dependencies have been placed.
+|Type of Project|header file|CPP file|
+|---------------|-----------|--------|
+|Animation|AnimationFile.h|AnimationFile.cpp|
+|Models|ModelInfo.h|ModelInfo.cpp|
+|Levels|LandTableInfo.h|LandTableInfo.cpp|
 
-You will need to change the first include in `ModelInfo.cpp` in order to fix a problem -- change `#include "stdafx.h"` to `#include "pch.h"`.
+Copy the relevant files you need (both the CPP and the header file) into your Visual Studio Project Directory.
 
-If you don't replace the include, this error will occur!
+With some files, they will fail to build with the following error:
 
-![Replacing an include](imgs/replaceinclude.png)
+![replace include file](imgs/replaceinclude.png)
 
-Afterwards, Add the files into your project by right clicking "Header Files" in your project explorer and going to Add -> Existing Item... to add `ModelInfo.h` and `ModelInfo.cpp`
+If this happens to you, replace the `stdafx.h` include with `pch.h` and rebuild.
 
-![Add Existing Items](imgs/AddExistingFilesVS.png)
+To add these files to your project, right click on a folder in your project explorer and go to Add -> Existing Item... and add the files you need (for example, `ModelInfo.h` in Header Files, `ModelInfo.cpp` in Source Files).
+
+![Add Existing Files](imgs/AddExistingFilesVS.png)
 
 ## Copying the boilerplate code:
 

@@ -22,6 +22,7 @@ To get started, click one of the items in the list on the left of this section!
     * Updated: Troubleshooting page got reorganized into general and mod specific issues. Navigation sidebar can now be used to determine what mod you're troubleshooting
     * Updated: Accessory Guide now has mention of `AccessoryMakeBald()` and `AccessoryDisableJiggle()` functions
     * Updated: Mentions of "Armature from Objects" tucked inside Utilities menu.
+    * Updated: Development Setup updated to use Github repository of SA2 Mod Loader.
 
 * Version 2.1.2
     * Refactored: Moved generic project setup to the designated [Development Environment Setup](DevSetup.md) page.
