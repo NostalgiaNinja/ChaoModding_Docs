@@ -13,13 +13,6 @@
 
 ## Adding the dependencies:
 
-!!! danger "Old documentation - Broken!"
-    SA2ModLoader previously came with a Programming directory and was easier to mod with.  XHax removed this and only provides a single binary, so now dependencies will have to be downloaded through the Github repository.
-
-~~Go into your Sonic Adventure 2 folder, and find the "programming" directory. Copy all of the files into your Visual Studio Project folder into your Visual Studio project directory. Note that your files will be read in the same directory as the Microsoft Visual Studio Solution file.
-
-![Adding Dependencies](imgs/FileManagement_AddingDependencies.png)
-
 !!! note "Changes to previous versions"
     SAModLoader no longer provides a "Programming" directory for modding the game. Download the SA2 Mod Loader repository and then copy the necessary files as needed.
 

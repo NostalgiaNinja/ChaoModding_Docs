@@ -62,9 +62,10 @@ Move the current frame playhead to the next frame you want to animate (you can s
 
 Do this as many times as you'd like, for as many body parts as you like.  If you want to preview the animation, select all the keyframes, press ++t++ (interpolation mode) and select "Linear", then adjust the keyframes as you would like. To preview the animation, press the ++spc++ key (by default, this can be changed in settings) in the main 3D Viewport.
 
-!!! note "Note:"
-    Blender's animation framerate is 24 FPS with a base of 1.000. This is **not** the same framerate that Sonic Adventure 2 plays Chao animations at.  It is currently unknown what the optimal framerate is for animating Chao at a 1:1 scale.
+!!! note "tip:"
+    Blender's animation framerate is 24 FPS with a base of 1.000. This is **not** the same framerate that Sonic Adventure 2 plays Chao animations at.  Sonic Adventure 2 runs at 60 frames per second, so to preview the framerate, set your framerate as custom, you'd use 60 as the FPS, and `1/speed` as your base (in our example we are using 0.12f so we'd use `1/0.120` as our base.)
 
+    Try and experiment with the base and find what works best for you! Once done, note your base down as this will be the speed of the animation.
 ## Exporting the animation:
 
 Before you go any further, take a note of the following:
@@ -176,7 +177,7 @@ Let's break it down:
 
 `EndFrame` - The End Frame of the animation. This will be the final frame in your timeline.
 
-`Speed` - The playback speed of the animation. Not much is known about this, but 0.12f is a recommended value for this.
+`Speed` - The playback speed of the animation. We use 0.12f as an example, but the formula for speed is `fps * speed`. Implying 60FPS, our speed formula would look as follows: `60 * 0.12f`.
 
 Put together, here is an example of what it'll look like:
 
