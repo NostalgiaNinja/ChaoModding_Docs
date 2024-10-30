@@ -14,7 +14,7 @@
         <link rel="prev" href="../MakingProject/">
       
       
-        <link rel="next" href="../FTNaming/">
+        <link rel="next" href="../AnimModding/">
       
       
       <link rel="icon" href="../logo.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Setting up your development environment - Chao World Modding Documentation v2.1.2</title>
+        <title>Setting up your development environment - Chao World Modding Documentation v2.2.0</title>
       
     
     
@@ -57,7 +57,7 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Setting up your development environment - Chao World Modding Documentation v2.1.2" >
+        <meta  property="og:title"  content="Setting up your development environment - Chao World Modding Documentation v2.2.0" >
       
         <meta  property="og:description"  content="None" >
       
@@ -73,7 +73,7 @@
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Setting up your development environment - Chao World Modding Documentation v2.1.2" >
+        <meta  name="twitter:title"  content="Setting up your development environment - Chao World Modding Documentation v2.2.0" >
       
         <meta  name="twitter:description"  content="None" >
       
@@ -116,7 +116,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Chao World Modding Documentation v2.1.2" class="md-header__button md-logo" aria-label="Chao World Modding Documentation v2.1.2" data-md-component="logo">
+    <a href=".." title="Chao World Modding Documentation v2.2.0" class="md-header__button md-logo" aria-label="Chao World Modding Documentation v2.2.0" data-md-component="logo">
       
   <img src="../logo.png" alt="logo">
 
@@ -129,7 +129,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Chao World Modding Documentation v2.1.2
+            Chao World Modding Documentation v2.2.0
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -199,12 +199,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Chao World Modding Documentation v2.1.2" class="md-nav__button md-logo" aria-label="Chao World Modding Documentation v2.1.2" data-md-component="logo">
+    <a href=".." title="Chao World Modding Documentation v2.2.0" class="md-nav__button md-logo" aria-label="Chao World Modding Documentation v2.2.0" data-md-component="logo">
       
   <img src="../logo.png" alt="logo">
 
     </a>
-    Chao World Modding Documentation v2.1.2
+    Chao World Modding Documentation v2.2.0
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -790,6 +790,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../AnimModding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Animation Modding
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../FTNaming/" class="md-nav__link">
         
   
@@ -985,6 +1006,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../credits/" class="md-nav__link">
         
   
@@ -1088,18 +1129,45 @@
 </ol>
 <p><img alt="Create DLL" src="../imgs/CreateDLL.png" /></p>
 <h2 id="adding-the-dependencies">Adding the dependencies:</h2>
-<p>Go into your Sonic Adventure 2 folder, and find the "programming" directory. Copy all of the files into your Visual Studio Project folder into your Visual Studio project directory. Note that your files will be read in the same directory as the Microsoft Visual Studio Solution file.</p>
-<p><img alt="Adding Dependencies" src="../imgs/FileManagement_AddingDependencies.png" /></p>
-<p>For advanced users, the most up-to-date dependencies can be found in <a href="../resources/">Tools</a> inside the "SA2Modloader includes" github page.</p>
-<p>Clone or download <code>ModelInfo.h</code> and <code>ModelInfo.cpp</code> from <a href="https://github.com/X-Hax/sa2-mod-loader/tree/master/libmodutils">LibModUtils</a>.</p>
-<p>To download the file in Github, click on each file you want, and click the download button on the right hand side of the header of the code preview.</p>
-<p><img alt="Github - Download Raw File" src="../imgs/github-DownloadRawFile.png" /></p>
-<p>Place these two files into your Visual Studio Project folder, where the other dependencies have been placed.</p>
-<p>You will need to change the first include in <code>ModelInfo.cpp</code> in order to fix a problem -- change <code>#include "stdafx.h"</code> to <code>#include "pch.h"</code>.</p>
-<p>If you don't replace the include, this error will occur!</p>
-<p><img alt="Replacing an include" src="../imgs/replaceinclude.png" /></p>
-<p>Afterwards, Add the files into your project by right clicking "Header Files" in your project explorer and going to Add -&gt; Existing Item... to add <code>ModelInfo.h</code> and <code>ModelInfo.cpp</code></p>
-<p><img alt="Add Existing Items" src="../imgs/AddExistingFilesVS.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Changes to previous versions</p>
+<p>SAModLoader no longer provides a "Programming" directory for modding the game. Download the SA2 Mod Loader repository and then copy the necessary files as needed.</p>
+</div>
+<p>Download the SA2 Mod Loader github repository <a href="https://github.com/X-Hax/sa2-mod-loader/archive/refs/heads/master.zip">here</a> and extract it in an appropriate place.  For me, I usually keep a "libs" folder for all my libraries.</p>
+<p>Once your repository zip folder is downloaded, go into <code>SA2ModLoader/Include</code>. Copy all the files here into your Visual Studio Project Directory.</p>
+<p>Go back to the extracted zip folder, and go into <code>libmodutils</code>. There are a few files we interact with here:</p>
+<table>
+<thead>
+<tr>
+<th>Type of Project</th>
+<th>header file</th>
+<th>CPP file</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Animation</td>
+<td>AnimationFile.h</td>
+<td>AnimationFile.cpp</td>
+</tr>
+<tr>
+<td>Models</td>
+<td>ModelInfo.h</td>
+<td>ModelInfo.cpp</td>
+</tr>
+<tr>
+<td>Levels</td>
+<td>LandTableInfo.h</td>
+<td>LandTableInfo.cpp</td>
+</tr>
+</tbody>
+</table>
+<p>Copy the relevant files you need (both the CPP and the header file) into your Visual Studio Project Directory.</p>
+<p>With some files, they will fail to build with the following error:</p>
+<p><img alt="replace include file" src="../imgs/replaceinclude.png" /></p>
+<p>If this happens to you, replace the <code>stdafx.h</code> include with <code>pch.h</code> and rebuild.</p>
+<p>To add these files to your project, right click on a folder in your project explorer and go to Add -&gt; Existing Item... and add the files you need (for example, <code>ModelInfo.h</code> in Header Files, <code>ModelInfo.cpp</code> in Source Files).</p>
+<p><img alt="Add Existing Files" src="../imgs/AddExistingFilesVS.png" /></p>
 <h2 id="copying-the-boilerplate-code">Copying the boilerplate code:</h2>
 <p>Add a new source file and call it <code>main.cpp</code></p>
 <p>Copy the <a href="../CWEAPICodeTemplate/">Chao World Extended API Code Template</a> and paste it into the fresh <code>main.cpp</code> file that you've added to the Visual Studio project.</p>

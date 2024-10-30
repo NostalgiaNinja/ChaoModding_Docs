@@ -22,7 +22,7 @@
     
     
       
-        <title>Accessory Mods - Chao World Modding Documentation v2.1.2</title>
+        <title>Accessory Mods - Chao World Modding Documentation v2.2.0</title>
       
     
     
@@ -57,7 +57,7 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Accessory Mods - Chao World Modding Documentation v2.1.2" >
+        <meta  property="og:title"  content="Accessory Mods - Chao World Modding Documentation v2.2.0" >
       
         <meta  property="og:description"  content="None" >
       
@@ -73,7 +73,7 @@
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Accessory Mods - Chao World Modding Documentation v2.1.2" >
+        <meta  name="twitter:title"  content="Accessory Mods - Chao World Modding Documentation v2.2.0" >
       
         <meta  name="twitter:description"  content="None" >
       
@@ -116,7 +116,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Chao World Modding Documentation v2.1.2" class="md-header__button md-logo" aria-label="Chao World Modding Documentation v2.1.2" data-md-component="logo">
+    <a href=".." title="Chao World Modding Documentation v2.2.0" class="md-header__button md-logo" aria-label="Chao World Modding Documentation v2.2.0" data-md-component="logo">
       
   <img src="../logo.png" alt="logo">
 
@@ -129,7 +129,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Chao World Modding Documentation v2.1.2
+            Chao World Modding Documentation v2.2.0
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -199,12 +199,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Chao World Modding Documentation v2.1.2" class="md-nav__button md-logo" aria-label="Chao World Modding Documentation v2.1.2" data-md-component="logo">
+    <a href=".." title="Chao World Modding Documentation v2.2.0" class="md-nav__button md-logo" aria-label="Chao World Modding Documentation v2.2.0" data-md-component="logo">
       
   <img src="../logo.png" alt="logo">
 
     </a>
-    Chao World Modding Documentation v2.1.2
+    Chao World Modding Documentation v2.2.0
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -714,6 +714,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../AnimModding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Animation Modding
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../FTNaming/" class="md-nav__link">
         
   
@@ -996,6 +1017,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting:
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1108,6 +1138,26 @@
   
   <span class="md-ellipsis">
     Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributing
   </span>
   
 
@@ -1336,6 +1386,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting:
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1399,7 +1458,7 @@
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>010_object_00015B4C - right arm
 </span></code></pre></div>
 <p>Adjust for whichever Chao type you use.</p>
-<p>Select the 000 object and go to SAIO Tools -&gt; Armature from Objects. Press OK on the dialogue box to generate a new armature. Delete the imported Chao (the hierarchy starting with the 000 object) and let's begin!</p>
+<p>Select the 000 object and go to SAIO Tools -&gt; Utilities -&gt; Armature from Objects. Press OK on the dialogue box to generate a new armature. Delete the imported Chao (the hierarchy starting with the 000 object) and let's begin!</p>
 <p><img alt="Armature from Objects" src="../imgs/blender-ArmatureFromObjects.png" /></p>
 <p>Model or import your models over the parts you want to cover -- this can be any amount of body parts, be it hands, stomach, legs, or even wings! For this example, I'll be doing 4 parts - two on the stomach, one on the left arm, one on the right arm.</p>
 <p>Select each of your models that you have imported or modelled, and go to the "Data" panel in the properties sidebar, and create a new vertex group. Name the vertex group the same as the body part you want to bind it to. Do this for every model you are adding as an accessory.</p>
@@ -1408,7 +1467,7 @@
 <p>If your bone controls the accessory as you like it, there is no need for the next step. If not, do the following:</p>
 <div class="admonition tip">
 <p class="admonition-title">How to select bones</p>
-<p>Select the object of the bone you're looking for, then click on the bone icon in the outliner. If the bone has a rectangle border outline, it means you've done this correctly.</p>
+<p>Select the Armature object, go into pose mode, and then select the bone you want to use.  Once selected, go back into object mode.</p>
 </div>
 <p>weight paint your model by selecting your model (go out of pose mode by pressing <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-tab">Tab</kbd></span> again), press A (to select all the faces), and go to the "Data" panel of your model you want to weight paint. A new section should appear where we defined the vertex groups. make sure the "Weight" slider is at 1.000 and click "Assign". This should make all the faces follow the bone we created. Tab out of Edit mode and follow the next step.</p>
 <p>delete all the "attach_" meshes that were created with the "Armature from Objects" process, and you're done! You now have a functional body accessory!</p>
@@ -1491,6 +1550,18 @@
 <p><code>"Example Accessory"</code> - This is the name of the accessory.</p>
 <p><code>"Example Description"</code> - This is the description of the accessory.</p>
 <p>Do this for as many accessories as you wish to create! Reminder that there is a limit of 255 accessories, some taken up by CWE.</p>
+<div class="admonition tip">
+<p class="admonition-title">MakeBald function</p>
+<p>If you want to avoid head clipping on the Chao accessory, use the following code to flatten the head of the Chao, and disable jiggle on the Chao:</p>
+</div>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="w">    </span><span class="n">cwe_api</span><span class="o">-&gt;</span><span class="n">AccessoryMakeBald</span><span class="p">(</span><span class="n">ExampleAccessoryID</span><span class="p">);</span>
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">DisableJiggle function</p>
+<p>If you want to stop the Chao body from clipping on an accessory, you might be interested in stopping the jiggle physics of a Chao. The following code does this:</p>
+</div>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">    </span><span class="n">cwe_api</span><span class="o">-</span><span class="n">AccessoryDisableJiggle</span><span class="p">(</span><span class="n">ExampleAccessoryID</span><span class="p">);</span>
+</span></code></pre></div>
 <h3 id="building-the-project">Building the Project:</h3>
 <p>Your solution configuration should be "Release" and your solution platform should be "x86" so that your mod is small, and does not have the additional code inside your mod. Your configurations should look like the following image below:</p>
 <p><img alt="configuration and platform" src="../imgs/ConfigPlatform.png" /></p>
@@ -1498,11 +1569,13 @@
 <p>If you still can't get your build to work, try using the example mod as a template.</p>
 <h2 id="creating-the-mod">Creating the mod:</h2>
 <p>If you haven't followed <a href="../MakingProject/">Making a Project</a>, set up your mod folder. Copy the DLL file from inside your release folder into your mod folder and edit your "mod.ini" file to contain your DLLFile. For example:</p>
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="na">DLLFile</span><span class="o">=</span><span class="s">ExampleMod.dll</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="na">DLLFile</span><span class="o">=</span><span class="s">ExampleMod.dll</span>
 </span></code></pre></div>
 <p>Place your .SA2MDL models inside the mod folder.</p>
 <p>Add a folder in your mod directory called "gd_PC", and inside that folder, add another directory called "PRS". Inside the "PRS" folder, add your <code>.PAK</code> texture files.</p>
 <p>Save your "mod.ini" file and test your mod!</p>
+<h2 id="troubleshooting">Troubleshooting:</h2>
+<p>If you have any issues with any of the mod creation process, check the <a href="../troubleshooting/">Troubleshooting page</a> to see if your problem is mentioned. If you have other issues with the mod creation process, ask around in the Chao Island Discord. If the issue is of importance to note, it will be added to the documentation after being mentioned.</p>
 
 
 
