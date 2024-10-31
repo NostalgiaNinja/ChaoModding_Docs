@@ -155,7 +155,7 @@ cwe_api->RegisterChaoTexlistLoad("ExampleTex", &example_texlist);
 
 Add the following code below the texture list variables:
 ```cpp
-BlackMarketItemAttributes BMExampleAccessiry = { 1000, 500, 0, -1, -1, 0 };
+BlackMarketItemAttributes BMExampleAccessory = { 1000, 500, 0, -1, -1, 0 };
 ```
 
 Let's break it down:
