@@ -81,7 +81,7 @@ Import a Chao model of your choice, starting with a Child Chao. Prepare the anim
 |Right Leg|leg_r|013|
 |Face|tongue|028|
 |Tail|tail|008|
-|Left Wing|wing_l|008|
+|Left Wing|wing_l|037|
 |Right Wing|wing_r|039|
 |Left Horn|horn_l|030|
 |Right Horn|horn_r|031|
