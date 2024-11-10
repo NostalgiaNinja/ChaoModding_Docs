@@ -4,7 +4,9 @@ New and improved Chao World Documentation created for General Purpose Chao Moddi
 
 Powered by [MKDocs](https://github.com/mkdocs/mkdocs) and [MKDocs Material theme](https://squidfunk.github.io/mkdocs-material).
 
-## How to use these files:
+To view these documents online, click [here](https://nostalgianinja.github.io/ChaoModding_Docs/)
+
+## How to use the documents locally:
 
 Install MKDocs using `pip`:
 
@@ -17,3 +19,5 @@ Install Material theme using `pip`:
 Run Mkdocs using `mkdocs serve`:
 
 ```python -m mkdocs serve```
+
+## Download the documentation build [here](https://github.com/NostalgiaNinja/ChaoModding_Docs/releases)
