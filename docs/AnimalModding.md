@@ -85,6 +85,7 @@ Import a Chao model of your choice, starting with a Child Chao. Prepare the anim
 |Right Wing|wing_r|039|
 |Left Horn|horn_l|030|
 |Right Horn|horn_r|031|
+|Forehead|forehead|029|
 
 Delete the Chao hierarchy and save as an SA2MDL. This will be used in the Animal Editor as a Child Chao.
 
@@ -145,5 +146,6 @@ Update your textures to contain the animal textures your mod needs.
 Save your "mod.ini" file and test your mod!
 
 ## Troubleshooting:
+
 
 If you have any issues with any of the mod creation process, check the [Troubleshooting page](troubleshooting.md) to see if your problem is mentioned. If you have other issues with the mod creation process, ask around in the Chao Island Discord. If the issue is of importance to note, it will be added to the documentation after being mentioned.
