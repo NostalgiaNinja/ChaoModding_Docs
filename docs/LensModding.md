@@ -13,6 +13,9 @@
 
 Tools can be downloaded [here](resources.md)
 
+!!! info "Credit"
+    Massive credit to Erubbu who wrote the initial guide on Lenses, using the knowledge for the Anime Lenses mod. 
+
 ## What is a "Lens"
 
 Lenses are a Chao World Extended addition, allowing you to change the texture of your Chao's eyes. They were introduced in Version 8 alongside the Custom Animal system, and are now available for customization and modification (>version 9.5)
@@ -49,7 +52,6 @@ The following textures are needed in the following order:
 You're allowed to add any textures needed for the lens casing thereafter.
 
 !!! note
-    
     Hero and Dark swap around for Chaos Chao eyes. Bear this in mind.
 
 ## Code:

@@ -15,6 +15,7 @@ A special thank you to all the following people:
 ## Information
 
 * Sonic Adventure hacking community (X-Hax)
+* Eru (Lenses, Animal Modding information)
 
 ## Proofreading
 

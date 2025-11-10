@@ -12,8 +12,9 @@
 * An existing fruit mod.
 * Patience
 
-Tools can be downloaded [here]
-
+Tools can be downloaded [here](resources.md)
+!!! info "Credit"
+    Massive credit to Erubbu who wrote the initial guide on Animal Modding, which this guide would be impossible to compile without!
 ## What is an "Animal"?
 
 Custom Animals are an extension of the Chao Animal system, where you can give a Chao the animal for it to absorb the animal and gain some of its parts randomly. Chao World Extended introduced custom animals from version 8.0, and allowed for customization from version 8.5. Animals spawn from fruit when looking away from the fruit. 
@@ -80,12 +81,12 @@ Import a Chao model of your choice, starting with a Child Chao. Prepare the anim
 |Left Leg|leg_l|006|
 |Right Leg|leg_r|013|
 |Face|tongue|028|
+|Forehead|forehead|029|
 |Tail|tail|008|
 |Left Wing|wing_l|037|
 |Right Wing|wing_r|039|
 |Left Horn|horn_l|030|
 |Right Horn|horn_r|031|
-|Forehead|forehead|029|
 
 Delete the Chao hierarchy and save as an SA2MDL. This will be used in the Animal Editor as a Child Chao.
 
