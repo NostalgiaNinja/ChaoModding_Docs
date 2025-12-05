@@ -54,6 +54,18 @@ Once done, delete the hierarchy of the Imported Chao.
 
 ![Save as SA2MDL](imgs/saveas_sa2mdl.png)
 
+
+!!! info "A Warning about 'clearing inverse'"
+    Clicking on "clear inverse" after contraining accessories might cause them to move around.
+
+#### How to move the Accessories back to its original place after adding Constraints
+
+First, before anything, make sure to apply all transforms.  Press ++ctrl+a++ and select "All Transforms".
+
+Hold down ++shift+s++, and press ++1++.  Then select the model, hold down ++shift+s++, and press ++7++.  If your accessory has multiple models/meshes, do this for each model/mesh.  This works because the Chao's origin (the orange dot) should be at the world's origin (0,0,0).
+
+This isn't needed for Body Accessories, since they do not use constraints.
+
 ### Body Accessories
 
 For body accessories, the process is much more involved, and would need you to generate an armature in order to rig the model. 
@@ -79,16 +91,17 @@ Select each of your models that you have imported or modelled, and go to the "Da
 
 ![Vertex Grouping](imgs/blender-VertexGroups.png)
 
-select your items to bind to the body, select the bone that corresponds to the name of the object (make sure that the bone selected has a rounded square surrounding it) and press ++ctrl+p++ to parent the bone (Do not use bone relative). go into pose mode (++ctrl+tab++) to test if the bone controls the accessory as well as the body part.
+Select your items to bind to the body, select the bone that corresponds to the name of the object (make sure that the bone selected has a rounded square surrounding it) and press ++ctrl+p++ to parent the bone (Do not use bone relative). go into pose mode (++ctrl+tab++) to test if the bone controls the accessory as well as the body part.
 
 If your bone controls the accessory as you like it, there is no need for the next step. If not, do the following:
 
 !!! tip "How to select bones"
     Select the Armature object, go into pose mode, and then select the bone you want to use.  Once selected, go back into object mode.
 
-weight paint your model by selecting your model (go out of pose mode by pressing ++ctrl+tab++ again), press A (to select all the faces), and go to the "Data" panel of your model you want to weight paint. A new section should appear where we defined the vertex groups. make sure the "Weight" slider is at 1.000 and click "Assign". This should make all the faces follow the bone we created. Tab out of Edit mode and follow the next step.
+Weight paint your model by selecting your model (go out of pose mode by pressing ++ctrl+tab++ again), press A (to select all the faces), and go to the "Data" panel of your model you want to weight paint. A new section should appear where we defined the vertex groups. make sure the "Weight" slider is at 1.000 and click "Assign". This should make all the faces follow the bone we created. Tab out of Edit mode and follow the next step.
 
-delete all the "attach_" meshes that were created with the "Armature from Objects" process, and you're done! You now have a functional body accessory!
+
+Delete all the "attach_" meshes that were created with the "Armature from Objects" process, and you're done! You now have a functional body accessory!
 
 Note: There is a **vertex limit of 32768** per model.
 
@@ -259,3 +272,4 @@ Save your "mod.ini" file and test your mod!
 ## Troubleshooting:
 
 If you have any issues with any of the mod creation process, check the [Troubleshooting page](troubleshooting.md) to see if your problem is mentioned. If you have other issues with the mod creation process, ask around in the Chao Island Discord. If the issue is of importance to note, it will be added to the documentation after being mentioned.
+
