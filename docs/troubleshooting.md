@@ -137,3 +137,35 @@ This is a known bug in Sonic Adventure 2 where if a model has multiple meshes, t
 * select all objects
 * select your primary object (to be neat about the join you're about to make)
 * press ++ctrl+j++ to join all the objects together.
+
+### Model is bigger/smaller than I want it to be in the Black Market
+
+In Blender, there is a way to adjust the fruit so that it appears bigger or smaller in the Black Market, regardless of its actual size.
+
+To make your fruit ***smaller*** in the Black Market, go to **Edit Mode** on Blender and shrink your fruit.  Then, go to **Object Mode** and expand your fruit (until it's back to it's original size again). 
+Now, in the Black Market, your fruit will look smaller.
+
+To make your fruit look ***BIGGER***, do the same thing in reverse: go to **Edit Mode** on Blender and expand your fruit.  Then, go to **Object Mode** and shrink your fruit to its original size.
+
+## Animal:
+
+### Animal mod is spawning seals
+
+You are testing your mod and for some reason, seals are spawning from your fruit. 
+
+Check your code.  Make sure that the minimum and maximum chance counts up from `0` to `100` for your `RegisterChaoMinimalFruit`.  For example:
+
+```
+cwe_api->RegisterChaoMinimalFruit(ExampleFruitID, mini_ExampleAnimalID, 0, 33;
+cwe_api->RegisterChaoMinimalFruit(ExampleFruitID, mini_ExampleAnimalID, 34, 66;
+cwe_api->RegisterChaoMinimalFruit(ExampleFruitID, mini_ExampleAnimalID, 67, 100;
+```
+
+If there is a point that it doesn't fully goes from 0 to 100, *that* is where a seal will spawn.
+
+### Animal textures are wrong or 1 solid color
+
+In Blender, make sure to check that the texture ID for your Animal model is set to the same index number in your animal's texture PAK. 
+
+The same goes to the animal parts for the chao.
+
