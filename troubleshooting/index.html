@@ -1089,6 +1089,48 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#model-is-biggersmaller-than-i-want-it-to-be-in-the-black-market" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model is bigger/smaller than I want it to be in the Black Market
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#animal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Animal:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Animal:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#animal-mod-is-spawning-seals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Animal mod is spawning seals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#animal-textures-are-wrong-or-1-solid-color" class="md-nav__link">
+    <span class="md-ellipsis">
+      Animal textures are wrong or 1 solid color
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1304,6 +1346,48 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#model-is-biggersmaller-than-i-want-it-to-be-in-the-black-market" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model is bigger/smaller than I want it to be in the Black Market
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#animal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Animal:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Animal:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#animal-mod-is-spawning-seals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Animal mod is spawning seals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#animal-textures-are-wrong-or-1-solid-color" class="md-nav__link">
+    <span class="md-ellipsis">
+      Animal textures are wrong or 1 solid color
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1432,6 +1516,23 @@
 <li>select your primary object (to be neat about the join you're about to make)</li>
 <li>press <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-j">J</kbd></span> to join all the objects together.</li>
 </ul>
+<h3 id="model-is-biggersmaller-than-i-want-it-to-be-in-the-black-market">Model is bigger/smaller than I want it to be in the Black Market</h3>
+<p>In Blender, there is a way to adjust the fruit so that it appears bigger or smaller in the Black Market, regardless of its actual size.</p>
+<p>To make your fruit <strong><em>smaller</em></strong> in the Black Market, go to <strong>Edit Mode</strong> on Blender and shrink your fruit.  Then, go to <strong>Object Mode</strong> and expand your fruit (until it's back to it's original size again). 
+Now, in the Black Market, your fruit will look smaller.</p>
+<p>To make your fruit look <strong><em>BIGGER</em></strong>, do the same thing in reverse: go to <strong>Edit Mode</strong> on Blender and expand your fruit.  Then, go to <strong>Object Mode</strong> and shrink your fruit to its original size.</p>
+<h2 id="animal">Animal:</h2>
+<h3 id="animal-mod-is-spawning-seals">Animal mod is spawning seals</h3>
+<p>You are testing your mod and for some reason, seals are spawning from your fruit. </p>
+<p>Check your code.  Make sure that the minimum and maximum chance counts up from <code>0</code> to <code>100</code> for your <code>RegisterChaoMinimalFruit</code>.  For example:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>cwe_api-&gt;RegisterChaoMinimalFruit(ExampleFruitID, mini_ExampleAnimalID, 0, 33;
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>cwe_api-&gt;RegisterChaoMinimalFruit(ExampleFruitID, mini_ExampleAnimalID, 34, 66;
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>cwe_api-&gt;RegisterChaoMinimalFruit(ExampleFruitID, mini_ExampleAnimalID, 67, 100;
+</span></code></pre></div>
+<p>If there is a point that it doesn't fully goes from 0 to 100, <em>that</em> is where a seal will spawn.</p>
+<h3 id="animal-textures-are-wrong-or-1-solid-color">Animal textures are wrong or 1 solid color</h3>
+<p>In Blender, make sure to check that the texture ID for your Animal model is set to the same index number in your animal's texture PAK. </p>
+<p>The same goes to the animal parts for the chao.</p>
 
 
 

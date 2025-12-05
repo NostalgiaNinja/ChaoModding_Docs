@@ -935,12 +935,13 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Chao">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#using-the-animal-editor-tool" class="md-nav__link">
+  <a href="#how-to-move-all-chao-animal-parts-to-its-proper-place-after-adding-constraints" class="md-nav__link">
     <span class="md-ellipsis">
-      Using the Animal Editor Tool
+      How to move all Chao Animal Parts to its proper place after adding Constraints
     </span>
   </a>
   
@@ -948,6 +949,29 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assigning-the-texture-in-texture-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assigning the texture in Texture Editor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-animal-editor-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the Animal Editor Tool
+    </span>
+  </a>
   
 </li>
       
@@ -1229,12 +1253,13 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Chao">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#using-the-animal-editor-tool" class="md-nav__link">
+  <a href="#how-to-move-all-chao-animal-parts-to-its-proper-place-after-adding-constraints" class="md-nav__link">
     <span class="md-ellipsis">
-      Using the Animal Editor Tool
+      How to move all Chao Animal Parts to its proper place after adding Constraints
     </span>
   </a>
   
@@ -1242,6 +1267,29 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assigning-the-texture-in-texture-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assigning the texture in Texture Editor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-animal-editor-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the Animal Editor Tool
+    </span>
+  </a>
   
 </li>
       
@@ -1372,10 +1420,14 @@
 </tr>
 </tbody>
 </table>
-<p>Set your initial keyframe at 0, and the ending keyframe at the required number of frames. Animate as necessary, making sure the interpolation mode of your animation is set to linear (select your frames, press <span class="keys"><kbd class="key-t">T</kbd></span>, select "linear").</p>
+<p>Set your initial keyframe at 0, and the ending keyframe at the required number of frames. Animate as necessary, making sure the interpolation mode of your animation is set to linear (select your frames, press <span class="keys"><kbd class="key-t">T</kbd></span>, select "linear").  Don't worry if the animation looks like it's "jumping" from one pose to another in Blender; in-game, the animation will tween to each frame at 9-15 fps.</p>
+<p>When doing the animation, do 1 cycle of movement. 
+(for example; the animal is moving their left and right foot only once for 15 frames)
+(for another example; the animal is moving up and down once for 14 frames) 
+Doing more than 1 would result in the animal moving "super fast" when preforming their animations.</p>
 <p>Go to SAIO Tools -&gt; Export -&gt; Export Node Animation to each animation separately. This will save it as an .SAANIM file needed for the Animal Editor tool.</p>
 <h3 id="chao">Chao</h3>
-<p>Import a Chao model of your choice, starting with a Child Chao. Prepare the animal parts you wish to add to the Chao, hiding the original Chao body parts as you go along. You will need to name the body parts a specific way, so that the Animal Edior can recognize them on import. <strong><em>These names are case sensitive!</em></strong> Constrain each part to their respective "Empty" parent object.</p>
+<p>Import a Chao model of your choice, starting with a Child Chao. Prepare the animal parts you wish to add to the Chao, hiding the original Chao body parts as you go along. You will need to name the body parts a specific way, so that the Animal Edior can recognize them on import. <strong><em>These names are case sensitive!</em></strong> </p>
 <table>
 <thead>
 <tr>
@@ -1452,16 +1504,76 @@
 </tr>
 </tbody>
 </table>
+<p>Constrain each part to their respective "Empty" parent object (Add an Object Constraint, with the constraint being "Child of", and within "Target", type in the part's constraint index and select the object with the matching number).  Make sure to apply all transforms.  Also remember to click "Clear Inverse" for all contraints.</p>
+<div class="admonition info">
+<p class="admonition-title">A Warning about 'clearing inverse'</p>
+<p>Clicking on "clear inverse" after contraining each part might move them in unintended places.  To move them back their original locations, follow these steps.</p>
+</div>
+<h4 id="how-to-move-all-chao-animal-parts-to-its-proper-place-after-adding-constraints">How to move all Chao Animal Parts to its proper place after adding Constraints</h4>
+<p>Go to "Object Properties" for the body part.</p>
+<p>First, some body parts will need to be rotated to their original positions.  These body parts will be the <strong>Left Arm</strong>, <strong>Right Arm</strong>, <strong>Right Foot</strong>, and the <strong>Tail</strong>.  Copy and paste the listed rotations into the part's XYZ rotations.</p>
+<table>
+<thead>
+<tr>
+<th>Body Part</th>
+<th>X - Rotation</th>
+<th>Y - Rotation</th>
+<th>Z - Rotation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Left Arm</td>
+<td>6.29222d</td>
+<td>22.8712d</td>
+<td>2.45043d</td>
+</tr>
+<tr>
+<td>Right Arm</td>
+<td>6.29457d</td>
+<td>-22.8712d</td>
+<td>177.544d</td>
+</tr>
+<tr>
+<td>Left Foot</td>
+<td>0d</td>
+<td>0d</td>
+<td>0d</td>
+</tr>
+<tr>
+<td>Right Foot</td>
+<td>0d</td>
+<td>0d</td>
+<td>-180d</td>
+</tr>
+<tr>
+<td>Tail</td>
+<td>-65.0007d</td>
+<td>0d</td>
+<td>0d</td>
+</tr>
+</tbody>
+</table>
+<p>Manually move the Model’s origin (the floating orange dot) to 000_object's origin (this is <em>usually</em> located at the World Origin(0,0,0)).  This has to be moved manually because XYZ locations are already set to 0,0,0.</p>
+<p>To make it easier to do this:
+- Select Snap (the Magnet icon) on top to activate it.  Select Closest and Grid.
+- Make sure that the Transform Pivot Point (what’s next to the magnet) is set to Individual Origins.</p>
 <p>Delete the Chao hierarchy and save as an SA2MDL. This will be used in the Animal Editor as a Child Chao.</p>
 <p><strong>OPTIONAL</strong>: Repeat the above steps for an Adult model if you want different models or textures for the adult. Save it as a second SA2MDL, which will be used for the Adult Chao.</p>
-<h3 id="using-the-animal-editor-tool">Using the Animal Editor Tool</h3>
+<h2 id="assigning-the-texture-in-texture-editor">Assigning the texture in Texture Editor</h2>
+<p>Once you're done with modelling on Blender, save your models and your textures and go to Texture Editor.</p>
+<p>If you are doing multiple animals, each animal should have their own texture pak. 
+Each texture PAK should include the (1)animal's textures, (2)Child Chao textures, and (3)Adult Chao textures (if you made seperate textures for the adult chao).</p>
+<h2 id="using-the-animal-editor-tool">Using the Animal Editor Tool</h2>
 <p>Extract the Animal Editor tool to an easily accessible location, and open it. Load the files according to each of the items that was created in the modelling process. Your completed file should look as follows:</p>
 <p><img alt="Animal Editor" src="../imgs/AnimalEditor-Imports.png" /></p>
 <p>Click "Export Code" and save the .mini file to create a large text file containing your model and animation data. This will be used in the coding section.</p>
+<p><strong>NOTE:</strong> Avoid using spaces or periods when naming the <code>.mini</code> file.  .  Use underscores '_' if needed.</p>
 <h2 id="code">Code</h2>
 <p>We will be using our fruit mod from a previous section. </p>
 <p>In order to proceed, we will need a fruit mod. Take your existing fruit mod that you made from the <a href="../FruitModding/">Fruit Modding Documentation</a> to get started. If you do not have a fruit mod. Make one by clicking the link to get started!</p>
-<p>In the <code>main.cpp</code> file, inside the <code>extern "C"</code> function, include your <code>.mini</code> file that you created during your modelling process. The <code>.mini</code> file contains all your geometry and bindings for textures, so we will not need any more SA2MDL files at this point. For example:</p>
+<p>Copy the <code>.mini</code> files into your Visual Studio Project Directory.  To add them to your project, right click on a folder in your project explorer and go to Add -&gt; Existing Item... and add the .mini files.</p>
+<p>In the <code>main.cpp</code> file, inside the <code>extern "C"</code> function, include your <code>.mini</code> file that you created during your modelling process.  The <code>.mini</code> file contains all your geometry and bindings for textures, so we will not need any more SA2MDL files at this point. For example:</p>
 <div class="language-cpp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;ExampleAnimal.mini&quot;</span>
 </span></code></pre></div>
 <p>Inside <code>CWELoad</code>, we will create an ID for the animal, using the .mini file's struct. At the bottom of the <code>.mini</code> file, you will find the following. Copy the variable name from your <code>CWE_MINIMAL</code> struct.</p>
@@ -1469,9 +1581,19 @@
 <p>Next: create the variable, using the copied varaible name inside the <code>AddChaoMinimal</code> function. Make sure to reference the varaible as it's reading from the struct in the <code>.mini</code> file.</p>
 <div class="language-cpp highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">mini_ExampleAnimalID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cwe_api</span><span class="o">-&gt;</span><span class="n">AddChaoMinimal</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ExampleAnimal_entry</span><span class="p">);</span>
 </span></code></pre></div>
+<p>Let's break it down:</p>
+<p><code>ExampleAnimal_entry</code> - The variable name from your CWE_MINIMAL struct.</p>
+<p><code>mini_ExampleAnimalID</code> - This is the Animal ID you want to spawn from your custom fruit.  Change <code>ExampleAnimalID</code> to a unique name.</p>
 <p>Now we need to bind it to the fruit:</p>
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">cwe_api</span><span class="o">-&gt;</span><span class="n">RegisterChaoMinimalFruit</span><span class="p">(</span><span class="n">ExampleFruitID</span><span class="p">,</span><span class="w"> </span><span class="n">mini_ExampleAnimalID</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">);</span>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">cwe_api</span><span class="o">-&gt;</span><span class="n">RegisterChaoMinimalFruit</span><span class="p">(</span><span class="n">ExampleFruitID</span><span class="p">,</span><span class="w"> </span><span class="n">mini_ExampleAnimalID</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
 </span></code></pre></div>
+<p>The numbers within the parentheses are the chances for the animal to spawn.</p>
+<ul>
+<li>chanceMin -  this is the Minimum chance variable for the animal to spawn</li>
+<li>chanceMax -  this is the Maximum chance variable.  If you only have 1 animal, keep this at <code>100</code>. </li>
+</ul>
+<p>Do this for as many animals you wish to create, <em>even if they are spawning from the same fruit</em>!<br />
+<strong>Note:</strong> if your animals are spawning from the same fruit, set the maximum as +1 higher as the previous animal spawning from the fruit and 1. (for example, cwe_api-&gt; ..., 0, 50);   cwe_api-&gt; ..., 51, 100);)</p>
 <h3 id="building-the-project">Building the Project:</h3>
 <p>Since your fruit mod was already set up, all you need to do is click on Build -&gt; Build Solution, or press F6.</p>
 <h2 id="creating-the-mod">Creating the mod:</h2>
