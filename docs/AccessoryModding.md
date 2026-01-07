@@ -242,7 +242,7 @@ Do this for as many accessories as you wish to create! Reminder that there is a 
     If you want to stop the Chao body from clipping on an accessory, you might be interested in stopping the jiggle physics of a Chao. The following code does this:
 
 ```cpp
-    cwe_api-AccessoryDisableJiggle(ExampleAccessoryID);
+    cwe_api->AccessoryDisableJiggle(ExampleAccessoryID);
 ```
 
 ### Building the Project:
@@ -272,4 +272,5 @@ Save your "mod.ini" file and test your mod!
 ## Troubleshooting:
 
 If you have any issues with any of the mod creation process, check the [Troubleshooting page](troubleshooting.md) to see if your problem is mentioned. If you have other issues with the mod creation process, ask around in the Chao Island Discord. If the issue is of importance to note, it will be added to the documentation after being mentioned.
+
 
