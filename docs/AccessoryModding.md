@@ -129,145 +129,29 @@ Add or remove the textures you want in the mod by clicking the "Add..." or "Remo
 
 Save the texture file as `.PAK`, and keep it aside for later.
 
-## Code:
+## Chao World Extended Editor
 
-If you have not created a Visual Studio project yet, follow the instructions on "[Setting up your development environment](DevSetup.md)".
+As of CWE 9.6 you no longer need code to add accessories. Download the [Chao World Extended Editor](https://github.com/Exant64/cweedit/releases/latest), extract the zip anywhere and run `cweedit.exe`.
 
-### Creating accessory IDs
+### Mod folder structure
 
-Inside the `extern "C"` function, create an ID that we will use for accessories:
-
-```cpp
-    int ExampleAccessoryID;
+To use the editor your mod needs a `CWE` folder, and an `Accessories` folder inside the `CWE` folder. Your folder structure should look like
+```
+.                                                                                          
+├── CWE
+│   └── Accessories
+│       └── some_test_model.sa2mdl
+└── mod.ini
 ```
 
-### Creating a custom Texture file:
+### Creating an accessory
 
-Inside the `extern "C"` function, the following two lines:
+You can create a new accessory file by clicking `File->New Accessory JSON`. Make sure to place your accessory JSON in the previously mentioned Accessories folder (the editor will not let you place it anywhere else).
 
-```cpp
-NJS_TEXNAME ExampleTex[10];
-NJS_TEXLIST example_texlist = { arrayptrandlength(ExampleTex) };
-```
+You should now see the Accessory Edit view.
+todo pic here
 
-Let's break these two lines down:
-
-`NJS_TEXNAME` - The name of your texture loader. change `ExampleTex` with a unique name, and replace the number inside of the square brackets (the array assignment) to the amount of textures your mod will have.
-
-`NJS_TEXLIST` - The texture list - Assign this to your `NJS_TEXNAME` so that it knows how to read it. Give it a unique name, since you reference this in any API calls that need your texture.
-
-Inside the CWELoad function, Load the texture file with the following code:
-
-```cpp
-cwe_api->RegisterChaoTexlistLoad("ExampleTex", &example_texlist);
-```
-
-`RegisterChaoTexlistLoad()` takes two arguments - The name of your texture file (without the .PAK at the end of it) and a reference call to the `NJS_TEXLIST` that you created.
-
-### Adding Black Market Attributes
-
-Add the following code below the texture list variables:
-```cpp
-BlackMarketItemAttributes BMExampleAccessory = { 1000, 500, 0, -1, -1, 0 };
-```
-
-Let's break it down:
-
-`BlackMarketItemAttributes` - This is a struct inside of the CWE API which contains the following, in the following order:
- 
- * PurchasePrice - The selling price of the item sold.
- 
- * SalePrice - the buying price if you're selling the item back to the Black Market.
- 
- * RequiredEmblems - The amount of emblems required in the game (0 to 180 is possible in game, anything higher and they will not be able to be purchased through the Black Market.)
- 
- * -1 - Name - Keep this as is, we define it in the RegisterChaoAccessory function.
- 
- * -1 - Description - Keep this as is, we define it in the RegisterChaoAccessory function.
- 
- * 0 - Unknown - Keep this as is.
-
-### Adding Custom Models:
-
-Create a `ModelInfo` pointer variable for each of the models you are about to add inside the `extern "C"` function. For example:
-
-```cpp
-ModelInfo* MDLExampleAccessory;
-```
-
-This is empty at the moment, so let's define it. In the `Init` function. underneath the `pathStr` variable, add the following for each model:
-
-```cpp
-MDLExampleAccessory = new ModelInfo(pathStr + "ExampleAccessory.sa2mdl");
-```
-
-Replace `MDLExampleAccessory` with whatever your `ModelInfo` pointer variable was called, and change the filename to the appropriate model.
-
-### Adding the accessory:
-
-We will be using the two types of accessories to define what our `EAccessoryType` Are. An `EAccessoryType` allows us to provide a category so that people can use the accessory in that category (They can use one head, one body, one generic1, and one generic2 accessory.)
-
-Inside the CWELoad function, call the `RegisterChaoAccessory` function from the CWE API. For example:
-
-```cpp
-    ExampleAccessoryID = cwe_api->RegisterChaoAccessory(Generic1, MDLExampleAccessory->getmodel(), &example_texlist, &BMExampleAccessory, "Example Accessory", "Example Description");
-```
-
-Let's break it down:
-
-`cwe_api->RegisterChaoAccessory()` - this is the function call you need to make.
-
-`Generic1` - this is `EAccessoryType` - This is separated into `Head` and `Face` for Head Accessories and `Generic1` and `Generic2` for body accessories.
-
-`MDLExampleAccessory->getmodel()` - This has two parts: the `ModelInfo` pointer variable you created, and `getmodel()`, which assigns the model to the accessory.
-
-`&example_texlist` - This is a reference call to the texture list you created above.
-
-`&BMExampleAccessory` - This is the Black Market Attributes (the information needed for the Black Market to sell the item). This can be `NULL` referenced if you don't want to sell the accessory, and obtain it through other means.
-
-`"Example Accessory"` - This is the name of the accessory.
-
-`"Example Description"` - This is the description of the accessory.
-
-Do this for as many accessories as you wish to create! Reminder that there is a limit of 255 accessories, some taken up by CWE.
-
-!!! tip "MakeBald function"
-    If you want to avoid head clipping on the Chao accessory, use the following code to flatten the head of the Chao, and disable jiggle on the Chao:
-
-```cpp
-    cwe_api->AccessoryMakeBald(ExampleAccessoryID);
-```
-
-!!! tip "DisableJiggle function"
-    If you want to stop the Chao body from clipping on an accessory, you might be interested in stopping the jiggle physics of a Chao. The following code does this:
-
-```cpp
-    cwe_api->AccessoryDisableJiggle(ExampleAccessoryID);
-```
-
-### Building the Project:
-
-Your solution configuration should be "Release" and your solution platform should be "x86" so that your mod is small, and does not have the additional code inside your mod. Your configurations should look like the following image below:
-
-![configuration and platform](imgs/ConfigPlatform.png)
-
-Build the project by pressing ++f6++ or going to Build -> Build Solution. If you have a "Build Succeeded" in your tooltip at the bottom left of your Visual Studio window, proceed. If you have a "Build Failed" message, have a look at the [Sample mod](examples.md) to see where you went wrong, and try again. 
-
-If you still can't get your build to work, try using the example mod as a template.
-
-## Creating the mod:
-
-If you haven't followed [Making a Project](MakingProject.md), set up your mod folder. Copy the DLL file from inside your release folder into your mod folder and edit your "mod.ini" file to contain your DLLFile. For example:
-
-```ini
-DLLFile=ExampleMod.dll
-```
-
-Place your .SA2MDL models inside the mod folder.
-
-Add a folder in your mod directory called "gd_PC", and inside that folder, add another directory called "PRS". Inside the "PRS" folder, add your `.PAK` texture files.
-
-Save your "mod.ini" file and test your mod!
+### 
 
 ## Troubleshooting:
 
