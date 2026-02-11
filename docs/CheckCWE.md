@@ -1,5 +1,7 @@
 # Checking if CWE Exists
 
+!!! As of 9.6 this is only relevant for Legacy API mods !!!
+
 If you are making a mod that's dependent on CWE, you can optionally write it in code (SA Mod Manager now has the feature to ask for dependencies). Here's how:
 
 in `init()`
