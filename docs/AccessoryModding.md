@@ -8,7 +8,7 @@
 * Intermediate 3D Theory
 * Basic C++ Programming skills
 * SA Tools (Make sure you've created an SA Tools Project!)
-* Chao World Extended (Versions > 9.5)
+* Chao World Extended (Versions >= 9.6)
 * Patience
 
 Tools can be downloaded [here](resources.md)
@@ -135,12 +135,12 @@ As of CWE 9.6 you no longer need code to add accessories. Download the [Chao Wor
 
 ### Mod folder structure
 
-To use the editor your mod needs a `CWE` folder, and an `Accessories` folder inside the `CWE` folder. Your folder structure should look like
+To use the editor your mod needs a `CWE` folder, and an `Accessories` folder inside it. Your folder structure should look like this:
 ```
 .                                                                                          
 ├── CWE
 │   └── Accessories
-│       └── some_test_model.sa2mdl
+│       └── ....
 └── mod.ini
 ```
 
@@ -149,9 +149,74 @@ To use the editor your mod needs a `CWE` folder, and an `Accessories` folder ins
 You can create a new accessory file by clicking `File->New Accessory JSON`. Make sure to place your accessory JSON in the previously mentioned Accessories folder (the editor will not let you place it anywhere else).
 
 You should now see the Accessory Edit view.
-todo pic here
 
-### 
+![CWE Editor - Accessory Edit View](imgs/CWEEdit-NewAccessory.png)
+
+### Preview Settings
+
+The Chao Preview options allow you to adjust the Chao you preview the accessory on. The most important setting in this is the Chao Type, since you want your accessory to look as good as possible on various adult Chao. The animation options also serve as a good test, especially "Crawling", since accessories can clip into the body very easily during that animation.
+
+![CWE Editor - Chao Preview](imgs/CWEEdit-ChaoPreview.png)
+
+We advise you to leave "Render Fix Preview" on. This toggles Render Fix accurate rendering, and we believe that it's best if you futureproof how your mod looks for Render Fix use, as it will become increasingly adopted in the SA2 modding scene. More about Render Fix in a bit.
+
+### Accessory Settings
+
+A lot of the options here have help tooltips that you can hover over to get more info, however we'll try to go into detail on some of the more important settings.
+
+The "Supports Render Fix" option enables Render Fix "Normal Draw" support for the accessory. As we said earlier, this is recommended! It enables proper Ambient and Specular material color support (including the exponent for specular values), texture filter options, vertex colored accessories, and proper double-sided lighting. Note that this is independent of the earlier mentioned "Render Fix Preview" option, that is only a visual setting for the editor alone. Disabling this setting will make CWE render the accessory as if Render Fix wasn't enabled.
+
+To set the accessory's model and texture, press the "Select" button next to "Object" and "Texture". The texture needs to be in it's usual corresponding folder (**mod's folder**/gd_PC for .prs textures, **mod's folder**/gd_PC/PRS for .pak textures), and the model file (chunk model, aka .sa2mdl) needs to be in the same folder as the .json file.
+
+The "ID" field is very important, it uniquely identifies your accessory. Make sure to come up with a unique ID, if your accessory is a hat don't just type in "hat" (for example, including the author or mod name in the ID should ensure uniqueness). Once you selected a model, a "Generate ID from Object Hash" button should show up below the ID field. This is for porting over pre-9.6 accessories to the editor, if you're doing that, make sure to let it generate an ID for you, since this way CWE *in most cases* converts the old accessory to the newly enabled editor-made one. If you're making a fresh 9.6+ accessory, **DO NOT** use this, and come up with a unique ID yourself.
+
+#### Bald Mode
+
+This option flattens the Chao's head to prevent clipping issues with evolution head shapes. It also hides the other Chao head parts (ex. the "bulbs" on Hero Chao) by default (you can tick "Don't hide head parts" to disable this).
+
+![CWE Editor - Bald Before/After](imgs/CWEEdit-BaldBeforeAfter.png)
+
+The "bald" system works by morphing the Chao head vertices to the nearest point on a sphere. You can configure the radius and the center of this sphere, and also the "strength" of the morphing on each axis. Check the help tooltips for more information.
+
+![CWE Editor - Bald "Presets" mode](imgs/CWEEdit-BaldPresets.png)
+![CWE Editor - Bald "Custom" mode](imgs/CWEEdit-BaldCustom.png)
+
+The "Presets" mode has a preset configuration that you can toggle for each axis (basically letting you shrink the chao's head on each axis).
+The "Custom" mode allows you to configure the parameters of the "shrinking" more precisely. Check the help tooltips on the parameters for more info on these.
+
+If anybody has an idea for a better name for this setting, please let us know.
+
+#### Hide Parts
+
+This sub-menu lets you hide specific Chao nodes (indices 0 through 39). The list also shows the ones automatically hidden by Bald settings (if enabled). You can find the index of the Chao model node you wish to hide through Blender, by checking at the number in front of the object's name. For example, for the right wing it would be 39, type 39 in the list, click Add, and the right wing should disappear.
+
+![CWE Editor - Hidden Wings](imgs/CWEEdit-HidePartsWings.png)
+
+You can click the Remove button next to the hidden node in the list to undo the change.
+
+![CWE Editor - Hide Parts Menu](imgs/CWEEdit-HideParts.png)
+
+#### Colors
+
+The new CWE 9.6 accessory system lets you assign "color slots" to material colors. This lets the player change colors on the accessories, leading to more customization in general. A color slot can be assigned to multiple materials at the same time. They also have a default color specified, for example a hat can always start out as a blue hat in the market, but the player can change it to whatever once they bought it.
+
+![CWE Editor - Colors menu before slot assignment](imgs/CWEEdit-ColorsBeforeAssign.png)
+
+The "Node Select" and "Material Select" options let you select which object and which material in said object you wanna assign a color slot to. You can select the color slot you want to assign to the material using the "Selected Slots" dropdown. The "Assign" button, as it suggests, just assigns the selected material to the selected color slot. "Assign All" assigns all the materials for the selected object to the slot. "Assign and Copy Color" assigns and simultaneously copies the material color to the slot.
+
+![CWE Editor - Colors](imgs/CWEEdit-Colors.png)
+
+Once you assigned a slot to the selected material, it shows the currently used slot below the dropdowns. You can change the color of the slots in the slots list by clicking on it. The "users" text next to the slot shows how many materials use the slot currently.
+
+### Saving
+
+If you followed all instructions till now, all you have to do is click the "Save" button on the bottom of the editor panel, and enable your mod!
+
+### Final notes
+
+You can freely open CWE's own accessories to take a look at how they're set up if it's any help. This also applies to any other accessory mods that will come out that were made through the editor.
+
+Since the documentation for the editor was a tad bit rushed, if anyone feels like there isn't enough detail, feel free to ping Exant or message them about any suggestions, since they wrote the editor part of the guide.
 
 ## Troubleshooting:
 
