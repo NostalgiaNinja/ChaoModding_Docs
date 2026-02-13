@@ -109,8 +109,8 @@ Create a static [function pointer](https://en.cppreference.com/w/cpp/language/po
 	{
 		if (/* Your requirement here */)
 			return true;
-		else
-			return false;
+
+		return false;
 	}
 ```
 
@@ -124,12 +124,11 @@ Explore the `tp->Data1.Chao->ChaoDataBase_ptr->` structrure by pressing ++ctrl+s
 
 ### Adding the Custom Chao
 
-Now we set up the Chao! In the `CWELoad` function, create a `CWE_API_CHAO_DATA` struct variable. For example:
+Now we set up the Chao! In the `CWEAPI_EarlyLoad` function, create a `CWE_API_CHAO_DATA` struct variable. For example:
 
 ```cpp
 
-    CWE_API_CHAO_DATA CharChao_pData =
-    {
+    CWE_API_CHAO_DATA CharChao_pData = {
         MDLExampleChao->getmodel(),	//pObject
         {0},						//pSecondEvoList[5]
 
@@ -177,7 +176,7 @@ Let's break this down, since it's such a big structure:
 At the end of all of this, add your Chao Type just below your Character Chao struct:
 
 ```cpp
-    cwe_api->AddChaoType(&CharChao_pData);
+    pAPI->pRegister->pChao->AddChaoType(&CharChao_pData);
 ```
 
 ### Building the Project:
