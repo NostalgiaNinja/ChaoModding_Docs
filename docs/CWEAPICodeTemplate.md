@@ -10,8 +10,6 @@ Copy and paste the template code below and get started!
 #include "cwe_api.h"
 #include "ModelInfo.h" //Not needed for FTNames.
 
-extern "C" __declspec(dllexport) ModInfo SA2ModInfo = { ModLoaderVer };
-
 // the new way to create CWE API mods functions
 // this runs AFTER the JSONs get loaded
 // there are also other exportable functions available, such as:
@@ -22,7 +20,7 @@ extern "C" __declspec(dllexport) void CWEAPI_Load(CWE_API* pAPI) {
 
 }
 
-/// all of the code below here is for "legacy" CWE load functions
+/// all of the code below here is for "legacy" CWE API functions
 // legacy CWE load function
 void CWELoad(CWE_REGAPI_LEGACY* cwe_api) {
 	....
@@ -36,4 +34,6 @@ extern "C" __declspec(dllexport) void Init(const char* path) {
 	RegisterDataFunc = (void (*)(void* ptr))GetProcAddress(h, "RegisterDataFunc");
 	RegisterDataFunc(CWELoad);
 }
+
+extern "C" __declspec(dllexport) ModInfo SA2ModInfo = { ModLoaderVer };
 ```
