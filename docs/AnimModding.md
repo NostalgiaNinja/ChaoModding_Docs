@@ -8,7 +8,7 @@
 * Animation theory
 * Basic C++ Programming skills
 * SA Tools (Make sure you've created an SA Tools Project!)
-* Chao World Extended (Versions > 9.5)
+* Chao World Extended (Versions >= 9.6)
 * Patience
 
 ## What is a "Chao Animation"?
