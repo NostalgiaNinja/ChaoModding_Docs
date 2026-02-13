@@ -28,7 +28,7 @@ extern "C" __declspec(dllexport) void CWEAPI_Load(CWE_API* pAPI) {
 
 /// all of the code below here is for "legacy" CWE API functions
 // legacy CWE load function
-void CWELoad(CWE_REGAPI_LEGACY* cwe_api) {
+void CWELoad(CWE_REGAPI* cwe_api) {
 	....
 }
 
