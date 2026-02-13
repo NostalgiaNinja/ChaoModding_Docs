@@ -34,6 +34,9 @@ void CWELoad(CWE_REGAPI* cwe_api) {
 
 // initialization function - MUST exist in order to have CWE and SA2 see your mod
 extern "C" __declspec(dllexport) void Init(const char* path) {
+	// this can be used to construct paths in the mod folder to models and/or animations
+	std::string pathStr = std::string(path) + "\\";
+
 	// all of this here is not necessary if you don't need the legacy CWE_REGAPI funcs
 	HMODULE h = GetModuleHandle(L"CWE");
 
