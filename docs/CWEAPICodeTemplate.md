@@ -10,27 +10,40 @@ Copy and paste the template code below and get started!
 #include "cwe_api.h"
 #include "ModelInfo.h" //Not needed for FTNames.
 
-extern "C"
-{
-	//registering data functions. - Needs to exist.
-	void (*RegisterDataFunc)(void* ptr);
+// the new way to create CWE API mods functions
+// note, these are exports, that means that CWE looks for these names specifically, and you CANNOT rename them
+// there are also other exportable functions available, such as:
+// 	- CWEAPI_EarlyInit (not intended for "API mods" necessarily, lets you run code before CWE initializes)
+//  - CWEAPI_LateInit (same thing as EarlyInit but after CWE initializes)
 
-    //main CWE Load function -- Important stuff like adding your CWE mod goes here
-	void CWELoad(CWE_REGAPI* cwe_api)
-	{
+// runs before the JSONs get loaded, this is also where the legacy RegisterDataFunc stuff runs
+extern "C" __declspec(dllexport) void CWEAPI_EarlyLoad(CWE_API* pAPI) {
 
-	}
-
-    //initialization function - MUST exist in order to have CWE and SA2 see your mod
-	__declspec(dllexport) void Init(const char* path)
-	{
-		HMODULE h = GetModuleHandle(L"CWE");
-
-		std::string pathStr = std::string(path) + "\\";
-
-		RegisterDataFunc = (void (*)(void* ptr))GetProcAddress(h, "RegisterDataFunc");
-		RegisterDataFunc(CWELoad);
-	}
-	__declspec(dllexport) ModInfo SA2ModInfo = { ModLoaderVer };
 }
+
+// this runs AFTER the JSONs get loaded
+extern "C" __declspec(dllexport) void CWEAPI_Load(CWE_API* pAPI) {
+
+}
+
+/// all of the code below here is for "legacy" CWE API functions
+// legacy CWE load function
+void CWELoad(CWE_REGAPI* cwe_api) {
+	....
+}
+
+// initialization function - MUST exist in order to have CWE and SA2 see your mod
+extern "C" __declspec(dllexport) void Init(const char* path) {
+	// this can be used to construct paths in the mod folder to models and/or animations
+	std::string pathStr = std::string(path) + "\\";
+
+	// all of this here is not necessary if you don't need the legacy CWE_REGAPI funcs
+	HMODULE h = GetModuleHandle(L"CWE");
+
+	void (*RegisterDataFunc)(void* ptr);
+	RegisterDataFunc = (void (*)(void* ptr))GetProcAddress(h, "RegisterDataFunc");
+	RegisterDataFunc(CWELoad);
+}
+
+extern "C" __declspec(dllexport) ModInfo SA2ModInfo = { ModLoaderVer };
 ```

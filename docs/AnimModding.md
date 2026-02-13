@@ -8,15 +8,15 @@
 * Animation theory
 * Basic C++ Programming skills
 * SA Tools (Make sure you've created an SA Tools Project!)
-* Chao World Extended (Versions > 9.5)
+* Chao World Extended (Versions >= 9.6)
 * Patience
 
 ## What is a "Chao Animation"?
 
 !!! note "A note:"
-    CWE Animations are currently very limited in scope, and may expand in the future when interest and understanding of the Chao animation system grows. Currently, only **replacing vanilla animations** are supported, and new animations/behaviours may be planned/supported in the future.
+    Currently, we only document **replacing vanilla animations**, as new animations don't have any use without new behaviors, and that's out of scope for the API (at the time of writing).
 
-Custom Animations are a part of Chao World Extended Chao API, where you can make your Chao move in a unique way.  Chao can be animated for a certain amount of frames, transitioned in and out of different animations, with different start and end frames, at different speeds. Chao World Extended introduced custom animations API support from version 9.5, but code has existed for it when the Omochao building features were added.
+Custom Animations are a part of Chao World Extended API, where you can make your Chao move in a unique way. Chao can be animated for a certain amount of frames, transitioned in and out of different animations, with different start and end frames, at different speeds. Chao World Extended introduced custom animations API support from version 9.5, but code has existed for it when the Omochao building features were added.
 
 ## Before we start:
 
@@ -140,17 +140,17 @@ Replace `exampleAnimation` with whatever your `AnimationFile` pointer variable w
 
 ### Adding the animation:
 
-In the CWELoad function, we will need to set up a `MotionTableAction` - This is what defines our animation, and ultimately gives us everything we need to call the animation.  The syntax is as follows:
+In the CWEAPI_EarlyLoad function, we will need to set up a `MOTION_TABLE` - This is what defines our animation, and ultimately gives us everything we need to call the animation.  The syntax is as follows:
 
 ```cpp
-MotionTableAction <anim_name> = { &custom_motion, loop, posture, TransitionID (-1 or Vanilla ID), Transitionspeed(-40), StartFrame, EndFrame, Speed};
+MOTION_TABLE <anim_name> = { &custom_motion, loop, posture, TransitionID (-1 or Vanilla ID), Transitionspeed(-40), StartFrame, EndFrame, Speed};
 ```
 
 Let's break it down:
 
-`MotionTableAction <anim_name>` - We're defining a variable in the CWE API of type `MotionTableAction`.
+`MOTION_TABLE <anim_name>` - We're defining a variable in the CWE API of type `MOTION_TABLE`.
 
-`&custom_motion` - This is the AnimationFile variable we created earlier. Remember to use an '&' so we can reference the pointer.
+`&custom_motion` - This is the NJS_MOTION in the AnimationFile variable we created earlier. Remember to use an '&' so we can reference the pointer.
 
 `loop` - This defines the loop function.  The following loop functions are available (undocumented, but brief):
 
@@ -182,44 +182,16 @@ Let's break it down:
 Put together, here is an example of what it'll look like:
 
 ```cpp
-MotionTableAction AnimAction = { testAnimation->getmotion(), 0, 0, -1, -40, 0, 5, 0.12f};
+MOTION_TABLE motionTableEntry = { testAnimation->getmotion(), 0, 0, -1, -40, 0, 5, 0.12f};
 ```
 
-Now that we've got the MotionTableAction, let's register the Animation. Create a variable to assign the animation:
-
-```cpp
-int AnimID = cwe_api->RegisterChaoAnimation("testAnimation", &AnimAction);
-```
-
-Let's break it down:
-
-`int AnimID` - We create an ID varaible for the mod to assign, we will use this later.
-
-`cwe_api->RegisterChaoAnimation(name, &action)` - This is the function to register the animation. The first parameter is a string name (make sure that it's programatically correct), and the second parameter is a reference to your MotionTableAction you created above. 
-
-Next, we change the animation we chose before we started coding to our new animation:
+Now that we've got the MOTION_TABLE, let's replace animation 337.
 
 ``` cpp
-*cwe_api->GetChaoAnimation(337) = *cwe_api->GetChaoAnimation(AnimID);
+*pAPI->pRegister->pMotion->GetChaoMotionTable(337) = motionTableEntry;
 ```
 
 The value on the left is the vanilla Animation (in our example alm_book.saanim) and the value on the right is our animation we're changing.
-
-### Chaining animations (optional)
-
-It's possible to chain animations together using the `cwe_api->RegisterChaoAnimTransition` function call. Say we have three animations: InitialAnim, AnimID1 and AnimID2:
-
-```cpp
-cwe_api->RegisterChaoAnimTransition(InitialAnim, AnimID1);
-```
-
-You could further chain the animation together by setting the next animation (AnimID1) as your first parameter and the animation thereafter (AnimID2) together:
-
-```cpp
-cwe_api->RegisterChaoAnimTransition(AnimID1, AnimID2);
-```
-
-...and so on. While there's no example of this in the sample code, this is how some custom animations are set up in [Chao World Extended](https://github.com/Exant64/CWE/blob/d278bc057a9cb8cf72693770aa0d253288c037fa/CWE/register/api_motion.cpp#L27).  
 
 ### Building the Project:
 
