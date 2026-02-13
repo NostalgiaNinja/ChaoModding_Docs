@@ -6,7 +6,7 @@ A special thank you to all the following people:
 
 ## Mod creators and API developers
 
-* Chao World Extended Team (Darkybenji, Exant, Mindacos, CGBuster, Shaddatic, Krzys2, AWildDaydreamer, Justin113D, Eru)
+* Chao World Extended Team (Darkybenji, Exant, Mindacos, CGBuster, Shaddatic, Krzys2, Chao Professor, Soep Hond, AWildDaydreamer, Justin113D, Eru)
 
 * Shaddatic (Enhanced Chao World)
 
