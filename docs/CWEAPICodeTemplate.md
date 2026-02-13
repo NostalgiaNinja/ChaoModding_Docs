@@ -11,11 +11,17 @@ Copy and paste the template code below and get started!
 #include "ModelInfo.h" //Not needed for FTNames.
 
 // the new way to create CWE API mods functions
-// this runs AFTER the JSONs get loaded
+// note, these are exports, that means that CWE looks for these names specifically, and you CANNOT rename them
 // there are also other exportable functions available, such as:
 // 	- CWEAPI_EarlyInit (not intended for "API mods" necessarily, lets you run code before CWE initializes)
 //  - CWEAPI_LateInit (same thing as EarlyInit but after CWE initializes)
-//  - CWEAPI_EarlyLoad (runs before the JSONs get loaded, this is also where the legacy RegisterDataFunc stuff runs)
+
+// runs before the JSONs get loaded, this is also where the legacy RegisterDataFunc stuff runs
+extern "C" __declspec(dllexport) void CWEAPI_EarlyLoad(CWE_API* pAPI) {
+
+}
+
+// this runs AFTER the JSONs get loaded
 extern "C" __declspec(dllexport) void CWEAPI_Load(CWE_API* pAPI) {
 
 }
