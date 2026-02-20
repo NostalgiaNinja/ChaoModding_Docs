@@ -66,6 +66,8 @@ There are 3 sets of animation for animals. The table below describes how many fr
 
 Set your initial keyframe at 0, and the ending keyframe at the required number of frames. Animate as necessary, making sure the interpolation mode of your animation is set to linear (select your frames, press ++t++, select "linear").  Don't worry if the animation looks like it's "jumping" from one pose to another in Blender; in-game, the animation will tween to each frame at 9-15 fps.
 
+![Blender Frame Range](imgs/Blender-Output_FrameRange.png)
+
 When doing the animation, do 1 cycle of movement. 
 (for example; the animal is moving their left and right foot only once for 15 frames)
 (for another example; the animal is moving up and down once for 14 frames) 
@@ -97,6 +99,8 @@ Constrain each part to their respective "Empty" parent object (Add an Object Con
 
 !!! info "A Warning about 'clearing inverse'"
     Clicking on "clear inverse" after contraining each part might move them in unintended places.  To move them back their original locations, follow these steps.
+
+![Animal Parts in Wrong Places](imgs/sample_AnimalParts-WrongPlace.png)
     
 #### How to move all Chao Animal Parts to its proper place after adding Constraints
 
@@ -112,14 +116,24 @@ First, some body parts will need to be rotated to their original positions.  The
 |Right Foot| 0d | 0d | -180d |
 |Tail| -65.0007d | 0d | 0d |
 
+![Blender Transform Object Properties](imgs/Blender-ObjectProperties_Transform.png)
+
 Manually move the Model’s origin (the floating orange dot) to 000_object's origin (this is *usually* located at the World Origin(0,0,0)).  This has to be moved manually because XYZ locations are already set to 0,0,0.
 
 To make it easier to do this:
 - Select Snap (the Magnet icon) on top to activate it.  Select Closest and Grid.
 - Make sure that the Transform Pivot Point (what’s next to the magnet) is set to Individual Origins.
 
+![Blender Snap](imgs/Blender-Snap_BaseTarget.png)
+![Blender Pivot Point](imgs/Blender-TransformPivotPoint.png)
 
 Delete the Chao hierarchy and save as an SA2MDL. This will be used in the Animal Editor as a Child Chao.
+
+![Animal Parts looking Normal](imgs/sample_AnimalParts-CorrectPlace.png)
+
+**Note**: After deleting the Chao hierarchy, all the animal parts will look like this.  This is normal.
+
+![Animal Parts after deleting Chao Hierarchy](imgs/sample_AnimalParts-SquishedTogether.png)
 
 **OPTIONAL**: Repeat the above steps for an Adult model if you want different models or textures for the adult. Save it as a second SA2MDL, which will be used for the Adult Chao.
 
@@ -148,6 +162,8 @@ We will be using our fruit mod from a previous section.
 In order to proceed, we will need a fruit mod. Take your existing fruit mod that you made from the [Fruit Modding Documentation](FruitModding.md) to get started. If you do not have a fruit mod. Make one by clicking the link to get started!
 
 Copy the `.mini` files into your Visual Studio Project Directory.  To add them to your project, right click on a folder in your project explorer and go to Add -> Existing Item... and add the .mini files.
+
+![Animal Mini in Code](imgs/Code-AnimalMiniPlacement.png)
 
 In the `main.cpp` file, inside the `extern "C"` function, include your `.mini` file that you created during your modelling process.  The `.mini` file contains all your geometry and bindings for textures, so we will not need any more SA2MDL files at this point. For example:
 
@@ -184,7 +200,7 @@ The numbers within the parentheses are the chances for the animal to spawn.
 - chanceMax -  this is the Maximum chance variable.  If you only have 1 animal, keep this at `100`. 
 
 Do this for as many animals you wish to create, *even if they are spawning from the same fruit*!  
-**Note:** if your animals are spawning from the same fruit, set the maximum as +1 higher as the previous animal spawning from the fruit and 1. (for example, cwe_api-> ..., 0, 50);   cwe_api-> ..., 51, 100);)
+**Note:** if your animals are spawning from the same fruit, set the next animal's maximum spawning chance as the same as the previous animal's minimum spawning chance from the fruit. (for example, cwe_api-> ..., 0, 50);   cwe_api-> ..., 50, 100);)
 
 ### Building the Project:
 
@@ -208,4 +224,5 @@ Save your "mod.ini" file and test your mod!
 
 
 If you have any issues with any of the mod creation process, check the [Troubleshooting page](troubleshooting.md) to see if your problem is mentioned. If you have other issues with the mod creation process, ask around in the Chao Island Discord. If the issue is of importance to note, it will be added to the documentation after being mentioned.
+
 
