@@ -48,4 +48,4 @@ Copy the [Chao World Extended API Code Template](CWEAPICodeTemplate.md) and past
 
 ## Getting the Chao World Extended API:
 
-Get the [CWE API](https://github.com/Exant64/CWE/tree/master/api) from here! Download all the headers in the folder and place it where you've placed all your includes.
+Get the [CWE API](https://github.com/Exant64/CWE/blob/master/api/cwe_api.h) from here! Download all the headers in the folder and place it where you've placed all your includes.

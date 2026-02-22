@@ -19,6 +19,7 @@ You are encouraged to download these tools and use these resources in order to m
 
 ## Modding tools
 * [Krzys2 Chao Editor](https://gamebanana.com/tools/6874)
+* [CWE Editor](https://github.com/Exant64/cweedit)
 
 ## Necessary modding libraries
 * [LibModUtils](https://github.com/X-Hax/sa2-mod-loader/tree/master/libmodutils)
