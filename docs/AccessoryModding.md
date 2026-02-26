@@ -130,6 +130,7 @@ Once you're done with setting the above settings on Blender, save your model and
 Add or remove the textures you want in the mod by clicking the "Add..." or "Remove" buttons at the bottom of the window (1). The index (2) corresponds to the Texture ID that you set in Blender. Create a unique Global ID (3) for each of your textures, so that your mod doesn't conflict with other mods.
 
 Save the texture file as `.PAK`, and keep it aside for later.
+(.PAK textures will go inside your **mod's folder**/gd_PC/PRS)
 
 ## Chao World Extended Editor
 
@@ -142,6 +143,9 @@ To use the editor your mod needs a `CWE` folder, and an `Accessories` folder ins
 .                                                                                          
 ├── CWE
 │   └── Accessories
+│       └── ....
+├── gd_PC
+│   └── PRS
 │       └── ....
 └── mod.ini
 ```
@@ -223,6 +227,7 @@ Since the documentation for the editor was a tad bit rushed, if anyone feels lik
 ## Troubleshooting:
 
 If you have any issues with any of the mod creation process, check the [Troubleshooting page](troubleshooting.md) to see if your problem is mentioned. If you have other issues with the mod creation process, ask around in the Chao Island Discord. If the issue is of importance to note, it will be added to the documentation after being mentioned.
+
 
 
 
