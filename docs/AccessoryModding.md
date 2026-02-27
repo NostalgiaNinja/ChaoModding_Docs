@@ -48,13 +48,6 @@ For head accessories, model or import your model where you want to place the acc
 
 ![clear inverse](imgs/modelling-set_inverse.png)
 
-Note: There is a **vertex limit of 32768** per model.
-
-Once done, delete the hierarchy of the Imported Chao.
-
-![Save as SA2MDL](imgs/saveas_sa2mdl.png)
-
-
 !!! info "A Warning about 'clearing inverse'"
     Clicking on "clear inverse" after contraining accessories might cause them to move around.
 
@@ -67,6 +60,12 @@ Hold down ++shift+s++, and press ++1++.  Then select the model, hold down ++shif
 ![Blender Snap Shortcut](imgs/Blender-Shortcut-Snap.png)
 
 This isn't needed for Body Accessories, since they do not use constraints.
+
+Note: There is a **vertex limit of 32768** per model.
+
+Once done, delete the hierarchy of the Imported Chao.
+
+![Save as SA2MDL](imgs/saveas_sa2mdl.png)
 
 ### Body Accessories
 
@@ -227,6 +226,7 @@ Since the documentation for the editor was a tad bit rushed, if anyone feels lik
 ## Troubleshooting:
 
 If you have any issues with any of the mod creation process, check the [Troubleshooting page](troubleshooting.md) to see if your problem is mentioned. If you have other issues with the mod creation process, ask around in the Chao Island Discord. If the issue is of importance to note, it will be added to the documentation after being mentioned.
+
 
 
 
