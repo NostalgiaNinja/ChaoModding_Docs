@@ -29,3 +29,8 @@ If you really have to work internally in Blender, the following keys will be a l
 * ++ctrl++ click - erase
 
 Right clicking brings up a mini color picker that can be quickly used to change the swatch.
+
+## Tip 5: Texture sizes
+
+If your texture is 1 solid color, make the size 4 x 4 pixels.
+It doesn't need to be huge.
