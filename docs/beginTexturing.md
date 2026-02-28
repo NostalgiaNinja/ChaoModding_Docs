@@ -32,5 +32,7 @@ Right clicking brings up a mini color picker that can be quickly used to change 
 
 ## Tip 5: Texture sizes
 
-If your texture is 1 solid color, make the size 4 x 4 pixels.
-It doesn't need to be huge.
+Make the texture sizes be equal to the power of 2 (2 x 2,  4 x 4,  8 x 8,  16 x 16,  32 x 32,  64 x 64,  128 x 128,  256 x 256,  516 x 516...).  This is for both the benefit of mipmapping and to avoid issues with the Texture Editor.
+
+Also, if your texture is 1 solid color, make the size 4 x 4 pixels.  
+It doesn't need to be huge; the 1 solid color will work the same regardless of size.  However, a smaller size will help avoid performance issues.
