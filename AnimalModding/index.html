@@ -25,7 +25,7 @@
     
     
       
-        <title>Custom Animal Mods - Chao World Modding Documentation v2.3.0</title>
+        <title>Custom Animal Mods - Chao World Modding Documentation v2.3.1</title>
       
     
     
@@ -59,14 +59,14 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Custom Animal Mods - Chao World Modding Documentation v2.3.0" />
+<meta property="og:title" content="Custom Animal Mods - Chao World Modding Documentation v2.3.1" />
 <meta property="og:image" content="https://nostalgianinja.github.io/ChaoModding_Docs/assets/images/social/AnimalModding.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://nostalgianinja.github.io/ChaoModding_Docs/AnimalModding/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Custom Animal Mods - Chao World Modding Documentation v2.3.0" />
+<meta property="twitter:title" content="Custom Animal Mods - Chao World Modding Documentation v2.3.1" />
 <meta property="twitter:image" content="https://nostalgianinja.github.io/ChaoModding_Docs/assets/images/social/AnimalModding.png" />
 </head>
   
@@ -103,7 +103,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Chao World Modding Documentation v2.3.0" class="md-header__button md-logo" aria-label="Chao World Modding Documentation v2.3.0" data-md-component="logo">
+    <a href=".." title="Chao World Modding Documentation v2.3.1" class="md-header__button md-logo" aria-label="Chao World Modding Documentation v2.3.1" data-md-component="logo">
       
   <img src="../logo.png" alt="logo">
 
@@ -116,7 +116,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Chao World Modding Documentation v2.3.0
+            Chao World Modding Documentation v2.3.1
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -186,12 +186,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Chao World Modding Documentation v2.3.0" class="md-nav__button md-logo" aria-label="Chao World Modding Documentation v2.3.0" data-md-component="logo">
+    <a href=".." title="Chao World Modding Documentation v2.3.1" class="md-nav__button md-logo" aria-label="Chao World Modding Documentation v2.3.1" data-md-component="logo">
       
   <img src="../logo.png" alt="logo">
 
     </a>
-    Chao World Modding Documentation v2.3.0
+    Chao World Modding Documentation v2.3.1
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -1721,6 +1721,7 @@
 </tbody>
 </table>
 <p>Set your initial keyframe at 0, and the ending keyframe at the required number of frames. Animate as necessary, making sure the interpolation mode of your animation is set to linear (select your frames, press <span class="keys"><kbd class="key-t">T</kbd></span>, select "linear").  Don't worry if the animation looks like it's "jumping" from one pose to another in Blender; in-game, the animation will tween to each frame at 9-15 fps.</p>
+<p><img alt="Blender Frame Range" src="../imgs/Blender-Output_FrameRange.png" /></p>
 <p>When doing the animation, do 1 cycle of movement. 
 (for example; the animal is moving their left and right foot only once for 15 frames)
 (for another example; the animal is moving up and down once for 14 frames) 
@@ -1809,6 +1810,7 @@ Doing more than 1 would result in the animal moving "super fast" when preforming
 <p class="admonition-title">A Warning about 'clearing inverse'</p>
 <p>Clicking on "clear inverse" after contraining each part might move them in unintended places.  To move them back their original locations, follow these steps.</p>
 </div>
+<p><img alt="Animal Parts in Wrong Places" src="../imgs/sample_AnimalParts-WrongPlace.png" /></p>
 <h4 id="how-to-move-all-chao-animal-parts-to-its-proper-place-after-adding-constraints">How to move all Chao Animal Parts to its proper place after adding Constraints</h4>
 <p>Go to "Object Properties" for the body part.</p>
 <p>First, some body parts will need to be rotated to their original positions.  These body parts will be the <strong>Left Arm</strong>, <strong>Right Arm</strong>, <strong>Right Foot</strong>, and the <strong>Tail</strong>.  Copy and paste the listed rotations into the part's XYZ rotations.</p>
@@ -1854,11 +1856,17 @@ Doing more than 1 would result in the animal moving "super fast" when preforming
 </tr>
 </tbody>
 </table>
+<p><img alt="Blender Transform Object Properties" src="../imgs/Blender-ObjectProperties_Transform.png" /></p>
 <p>Manually move the Model’s origin (the floating orange dot) to 000_object's origin (this is <em>usually</em> located at the World Origin(0,0,0)).  This has to be moved manually because XYZ locations are already set to 0,0,0.</p>
 <p>To make it easier to do this:
 - Select Snap (the Magnet icon) on top to activate it.  Select Closest and Grid.
 - Make sure that the Transform Pivot Point (what’s next to the magnet) is set to Individual Origins.</p>
+<p><img alt="Blender Snap" src="../imgs/Blender-Snap_BaseTarget.png" />
+<img alt="Blender Pivot Point" src="../imgs/Blender-TransformPivotPoint.png" /></p>
 <p>Delete the Chao hierarchy and save as an SA2MDL. This will be used in the Animal Editor as a Child Chao.</p>
+<p><img alt="Animal Parts looking Normal" src="../imgs/sample_AnimalParts-CorrectPlace.png" /></p>
+<p><strong>Note</strong>: After deleting the Chao hierarchy, all the animal parts will look like this.  This is normal.</p>
+<p><img alt="Animal Parts after deleting Chao Hierarchy" src="../imgs/sample_AnimalParts-SquishedTogether.png" /></p>
 <p><strong>OPTIONAL</strong>: Repeat the above steps for an Adult model if you want different models or textures for the adult. Save it as a second SA2MDL, which will be used for the Adult Chao.</p>
 <h2 id="assigning-the-texture-in-texture-editor">Assigning the texture in Texture Editor</h2>
 <p>Once you're done with modelling on Blender, save your models and your textures and go to Texture Editor.</p>
@@ -1873,6 +1881,7 @@ Each texture PAK should include the (1)animal's textures, (2)Child Chao textures
 <p>We will be using our fruit mod from a previous section. </p>
 <p>In order to proceed, we will need a fruit mod. Take your existing fruit mod that you made from the <a href="../FruitModding/">Fruit Modding Documentation</a> to get started. If you do not have a fruit mod. Make one by clicking the link to get started!</p>
 <p>Copy the <code>.mini</code> files into your Visual Studio Project Directory.  To add them to your project, right click on a folder in your project explorer and go to Add -&gt; Existing Item... and add the .mini files.</p>
+<p><img alt="Animal Mini in Code" src="../imgs/Code-AnimalMiniPlacement.png" /></p>
 <p>In the <code>main.cpp</code> file, inside the <code>extern "C"</code> function, include your <code>.mini</code> file that you created during your modelling process.  The <code>.mini</code> file contains all your geometry and bindings for textures, so we will not need any more SA2MDL files at this point. For example:</p>
 <div class="language-cpp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;ExampleAnimal.mini&quot;</span>
 </span></code></pre></div>
@@ -1893,7 +1902,7 @@ Each texture PAK should include the (1)animal's textures, (2)Child Chao textures
 <li>chanceMax -  this is the Maximum chance variable.  If you only have 1 animal, keep this at <code>100</code>. </li>
 </ul>
 <p>Do this for as many animals you wish to create, <em>even if they are spawning from the same fruit</em>!<br />
-<strong>Note:</strong> if your animals are spawning from the same fruit, set the maximum as +1 higher as the previous animal spawning from the fruit and 1. (for example, cwe_api-&gt; ..., 0, 50);   cwe_api-&gt; ..., 51, 100);)</p>
+<strong>Note:</strong> if your animals are spawning from the same fruit, set the next animal's maximum spawning chance as the same as the previous animal's minimum spawning chance from the fruit. (for example, cwe_api-&gt; ..., 0, 50);   cwe_api-&gt; ..., 50, 100);)</p>
 <h3 id="building-the-project">Building the Project:</h3>
 <p>Since your fruit mod was already set up, all you need to do is click on Build -&gt; Build Solution, or press F6.</p>
 <h2 id="creating-the-mod">Creating the mod:</h2>

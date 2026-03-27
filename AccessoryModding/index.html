@@ -25,7 +25,7 @@
     
     
       
-        <title>Accessory Mods - Chao World Modding Documentation v2.3.0</title>
+        <title>Accessory Mods - Chao World Modding Documentation v2.3.1</title>
       
     
     
@@ -59,14 +59,14 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Accessory Mods - Chao World Modding Documentation v2.3.0" />
+<meta property="og:title" content="Accessory Mods - Chao World Modding Documentation v2.3.1" />
 <meta property="og:image" content="https://nostalgianinja.github.io/ChaoModding_Docs/assets/images/social/AccessoryModding.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://nostalgianinja.github.io/ChaoModding_Docs/AccessoryModding/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Accessory Mods - Chao World Modding Documentation v2.3.0" />
+<meta property="twitter:title" content="Accessory Mods - Chao World Modding Documentation v2.3.1" />
 <meta property="twitter:image" content="https://nostalgianinja.github.io/ChaoModding_Docs/assets/images/social/AccessoryModding.png" />
 </head>
   
@@ -103,7 +103,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Chao World Modding Documentation v2.3.0" class="md-header__button md-logo" aria-label="Chao World Modding Documentation v2.3.0" data-md-component="logo">
+    <a href=".." title="Chao World Modding Documentation v2.3.1" class="md-header__button md-logo" aria-label="Chao World Modding Documentation v2.3.1" data-md-component="logo">
       
   <img src="../logo.png" alt="logo">
 
@@ -116,7 +116,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Chao World Modding Documentation v2.3.0
+            Chao World Modding Documentation v2.3.1
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -186,12 +186,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Chao World Modding Documentation v2.3.0" class="md-nav__button md-logo" aria-label="Chao World Modding Documentation v2.3.0" data-md-component="logo">
+    <a href=".." title="Chao World Modding Documentation v2.3.1" class="md-nav__button md-logo" aria-label="Chao World Modding Documentation v2.3.1" data-md-component="logo">
       
   <img src="../logo.png" alt="logo">
 
     </a>
-    Chao World Modding Documentation v2.3.0
+    Chao World Modding Documentation v2.3.1
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -1852,9 +1852,6 @@
 <p>Head accessories are similar to hats, so the process is pretty much the same.</p>
 <p>For head accessories, model or import your model where you want to place the accessory to be placed, minding the position of the head. Once your model is placed on the correct place, Add an Object Constraint, with the constraint being "Child of", and use the eyedropper on the head of your Chao.  Once done, click the "Clear Inverse" button to clear the Inverse Correction of the Child Constraint, putting it in place where it's supposed to be. On export, it will auto triangulate.</p>
 <p><img alt="clear inverse" src="../imgs/modelling-set_inverse.png" /></p>
-<p>Note: There is a <strong>vertex limit of 32768</strong> per model.</p>
-<p>Once done, delete the hierarchy of the Imported Chao.</p>
-<p><img alt="Save as SA2MDL" src="../imgs/saveas_sa2mdl.png" /></p>
 <div class="admonition info">
 <p class="admonition-title">A Warning about 'clearing inverse'</p>
 <p>Clicking on "clear inverse" after contraining accessories might cause them to move around.</p>
@@ -1862,7 +1859,11 @@
 <h4 id="how-to-move-the-accessories-back-to-its-original-place-after-adding-constraints">How to move the Accessories back to its original place after adding Constraints</h4>
 <p>First, before anything, make sure to apply all transforms.  Press <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-a">A</kbd></span> and select "All Transforms".</p>
 <p>Hold down <span class="keys"><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-s">S</kbd></span>, and press <span class="keys"><kbd class="key-1">1</kbd></span>.  Then select the model, hold down <span class="keys"><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-s">S</kbd></span>, and press <span class="keys"><kbd class="key-7">7</kbd></span>.  If your accessory has multiple models/meshes, do this for each model/mesh.  This works because the Chao's origin (the orange dot) should be at the world's origin (0,0,0).</p>
+<p><img alt="Blender Snap Shortcut" src="../imgs/Blender-Shortcut-Snap.png" /></p>
 <p>This isn't needed for Body Accessories, since they do not use constraints.</p>
+<p>Note: There is a <strong>vertex limit of 32768</strong> per model.</p>
+<p>Once done, delete the hierarchy of the Imported Chao.</p>
+<p><img alt="Save as SA2MDL" src="../imgs/saveas_sa2mdl.png" /></p>
 <h3 id="body-accessories">Body Accessories</h3>
 <p>For body accessories, the process is much more involved, and would need you to generate an armature in order to rig the model. </p>
 <p>Before you begin, take your imported Chao and note the names of the body parts you will be adding vertex groups to. For example:</p>
@@ -1897,7 +1898,8 @@
 <p>Once you're done with setting the above settings on Blender, save your model and your texture and go to Texture Editor.</p>
 <p><img alt="Texture Editor - Assigning the texture" src="../imgs/TextureEditor-setting_textures.png" /></p>
 <p>Add or remove the textures you want in the mod by clicking the "Add..." or "Remove" buttons at the bottom of the window (1). The index (2) corresponds to the Texture ID that you set in Blender. Create a unique Global ID (3) for each of your textures, so that your mod doesn't conflict with other mods.</p>
-<p>Save the texture file as <code>.PAK</code>, and keep it aside for later.</p>
+<p>Save the texture file as <code>.PAK</code>, and keep it aside for later. <br />
+(.PAK textures will go inside your <strong>mod's folder</strong>/gd_PC/PRS)</p>
 <h2 id="chao-world-extended-editor">Chao World Extended Editor</h2>
 <p>As of CWE 9.6 you no longer need code to add accessories. Download the <a href="https://github.com/Exant64/cweedit/releases/latest">Chao World Extended Editor</a>, extract the zip anywhere and run <code>cweedit.exe</code>.</p>
 <h3 id="mod-folder-structure">Mod folder structure</h3>
@@ -1906,7 +1908,10 @@
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── CWE
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>│   └── Accessories
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>│       └── ....
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>└── mod.ini
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>├── gd_PC
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>│   └── PRS
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>│       └── ....
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>└── mod.ini
 </span></code></pre></div></p>
 <h3 id="creating-an-accessory">Creating an accessory</h3>
 <p>You can create a new accessory file by clicking <code>File-&gt;New Accessory JSON</code>. Make sure to place your accessory JSON in the previously mentioned Accessories folder (the editor will not let you place it anywhere else).</p>
