@@ -1,0 +1,49 @@
+
+# Chao World Extended API Code Template
+
+The following code is a template to start off with CWE mods - This is the *bare minimum* of what can be used to start a mod using the CWE API. You may need to add more include statements for some mods to run properly (ie `SA2ModLoader.h` and `ModelInfo.h` for NJS and ModelInfo* objects) In every coding section of a mod using the CWE API, you will see this page come up as it is your boilerplate for starting a mod.
+
+Copy and paste the template code below and get started!
+
+```cpp
+#include "pch.h"
+#include "cwe_api.h"
+#include "ModelInfo.h" //Not needed for FTNames.
+
+// the new way to create CWE API mods functions
+// note, these are exports, that means that CWE looks for these names specifically, and you CANNOT rename them
+// there are also other exportable functions available, such as:
+// 	- CWEAPI_EarlyInit (not intended for "API mods" necessarily, lets you run code before CWE initializes)
+//  - CWEAPI_LateInit (same thing as EarlyInit but after CWE initializes)
+
+// runs before the JSONs get loaded, this is also where the legacy RegisterDataFunc stuff runs
+extern "C" __declspec(dllexport) void CWEAPI_EarlyLoad(CWE_API* pAPI) {
+
+}
+
+// this runs AFTER the JSONs get loaded
+extern "C" __declspec(dllexport) void CWEAPI_Load(CWE_API* pAPI) {
+
+}
+
+/// all of the code below here is for "legacy" CWE API functions
+// legacy CWE load function
+void CWELoad(CWE_REGAPI* cwe_api) {
+	....
+}
+
+// initialization function - MUST exist in order to have CWE and SA2 see your mod
+extern "C" __declspec(dllexport) void Init(const char* path) {
+	// this can be used to construct paths in the mod folder to models and/or animations
+	std::string pathStr = std::string(path) + "\\";
+
+	// all of this here is not necessary if you don't need the legacy CWE_REGAPI funcs
+	HMODULE h = GetModuleHandle(L"CWE");
+
+	void (*RegisterDataFunc)(void* ptr);
+	RegisterDataFunc = (void (*)(void* ptr))GetProcAddress(h, "RegisterDataFunc");
+	RegisterDataFunc(CWELoad);
+}
+
+extern "C" __declspec(dllexport) ModInfo SA2ModInfo = { ModLoaderVer };
+```
